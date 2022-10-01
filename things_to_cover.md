@@ -3,7 +3,7 @@
 - [A list for things to add to the course](#a-list-for-things-to-add-to-the-course)
   - [Projects](#projects)
   - [Basic](#basic)
-  - [Intermidiate](#intermidiate)
+  - [Intermediate](#intermediate)
   - [Advanced](#advanced)
 
 ## Projects
@@ -12,6 +12,12 @@
 - [ ] Guess the code
 - [ ] hangman
 - [ ] Trivia Game
+- [ ] Full flow for encryption
+  - [ ] Frequency analysis
+  - [ ] adding entropy
+  - [ ] checking valid input (making sure the input is all ascii)
+  - [ ] All of that with tests
+  - [ ] maybe add an entry point?
 
 ## Basic
 
@@ -19,10 +25,10 @@
 - [ ] Lists and Dicts
 - [ ] file IO
 
-## Intermidiate
+## Intermediate
 
 - [ ] Classes$$
-- [ ] Custrom Exceptions
+- [ ] Custom Exceptions
 - [ ] List\Dict comprehension
 
 ## Advanced
