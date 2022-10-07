@@ -8,6 +8,9 @@
 
 ## Projects
 
+- [ ] Guessing game
+  - [ ] doing with a `while` loop with a real condition
+  - [ ] doing with a `while` loop with a `true` and a `break` condition
 - [ ] Simple Chat Program
 - [ ] Guess the code
 - [ ] hangman
