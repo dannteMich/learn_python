@@ -128,7 +128,7 @@ age = int(input("What is your age? "))
 --
 
 <br/>
-.callout-blue[**Reminder**: Always line-breaks at the end]
+.callout-blue[**Reminder**: Also always line-breaks at the end]
 
 ---
 
@@ -211,6 +211,9 @@ else:
 --
  `Small negative`
 
+--
+
+Aaaaaand that's it!
 ---
 
 class: center, middle, inverse
@@ -219,9 +222,120 @@ class: center, middle, inverse
 
 ---
 
+# String Basics
+
+```python
+my_str = "hello strings"
+```
+
+--
+
+- **access**
+```python
+my_str[0] # h
+my_str[1] # e
+my_str[-1] # s
+my_str[-2] # g
+```
+
+--
+
+- **slicing**
+```python
+s = my_str[0:5] # s == hello
+```
+
+--
+
+- **`len`**
+```python
+length = len(my_str) # length == 13
+```
+
+--
+
+- **concatenation**
+```python
+new_str = my_str + " are fun" # new_str == "hello strings are fun"
+```
+---
+
+# Some important points
+
+--
+
+- No such thing as a **`char`** in Python - only strings of length 1
+    ```python
+    my_char = "a"
+    len(my_char) # 1
+    type(my_char) # <class 'str'>
+    ```
+
+
+
+- Strings can be empty
+  ```python
+  empty_str = ""
+  len(empty_str) # 0
+  ```
+
+--
+
+- Strings are immutable
+  ```python
+  my_str = "Hello"
+  my_str[0] = "h" # Error
+  ```
+
+
+  
+---
+
+# Some useful methods and properties
+
+you can find all of these on devdocs.io under in the [string section](https://devdocs.io/python~3.10/library/stdtypes#str)
+
+Some examples:
+
+--
+
+
+- **Manipulation**
+
+  - `upper`, `lower`, `capitalize`
+  - `strip`
+  - `replace`
+  - `split`
+  
+--
+
+- **Testing**
+  - `isalpha`, `isdigit`, `isalnum`
+  - `startswith`, `endswith`
+
+--
+
+- **Searching**
+  - `find`, `index`
+  - `count`
+
+--
+
+These are only partial examples, there are many more!
+
+---
+
+
 class: center, middle, inverse
 
 # Lists
+
+---
+
+class: center, middle
+
+## A minute to talk about
+# Slicing
 
 ---
 
@@ -231,7 +345,7 @@ class: center, middle, inverse
 
 ---
 
-class: inverse
+class: center middle
 
 # `str` is a weird collection!
 
