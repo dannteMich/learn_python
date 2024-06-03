@@ -332,6 +332,54 @@ class: center, middle, inverse
 
 ---
 
+# Lists
+
+An ordered collection of items
+```python
+l = [1, 40, -4, 0, 365]
+print(l[1]) # 40
+````
+
+- Can hold multiple types of items
+  - But this is usually **a BAD idea**
+- **Mutable** - can be changed
+    ```python
+    l[2] = 0
+    print(l) # [1, 40, 0, 0, 365]
+    ```
+
+---
+
+# Useful methods and properties of lists
+
+- Quick copy with slicing `[:]`
+  ```python
+  l = [1, 2, 3]
+  l2 = l[:] # this is different from l2 = l  
+  ```
+- check if something is `in`
+  ```python
+  if 1 in l:
+      print("1 is in the list")
+
+  if 4 not in l:
+    print("4 is not in the list")
+  ```
+--
+
+- [common sequence methods](https://devdocs.io/python~3.10/library/stdtypes#typesseq-mutable) and [mutable sequence methods](https://devdocs.io/python~3.10/library/stdtypes#typesseq-mutable)
+--
+
+- Additional method:  [`sort`](https://devdocs.io/python~3.10/library/stdtypes#list.sort) - **in place**
+
+--
+
+- `join` - **not** a list method, but a string method that takes a list as an argument, and prints it's elements with the string as a separator
+  ```python
+  "-->>".join(l) # "1-->>40-->>0-->>0-->>365"
+  ```
+
+---
 class: center, middle
 
 ## A minute to talk about
@@ -349,7 +397,30 @@ class: center middle
 
 # `str` is a weird collection!
 
-It's a collection of itself
+--
+
+It's a collection of itself...
+
+---
+
+class: center, middle
+
+## A minute to talk about
+# (Im)Mutability
+
+---
+
+
+# Here be Dragons
+
+```python
+l = [1, 2, 3]
+  l2 = l[:]
+  l3 = l # This is a reference. they do not point to the same object
+
+```
+
+
 
 ---
 
