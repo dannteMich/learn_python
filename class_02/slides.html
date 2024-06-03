@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Reminder</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .inverse {background-color: black; color: lightgrey }
+      .callout-blue {border: 2px solid blue; background-color: #ddddff; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Basic Python Reminders
+
+---
+
+
+
+# Agenda
+
+1. I/O - `input` and `print`
+1. conditionals - `if`, `elif`, `else`
+1. Strings
+ - And useful methods
+1. `list`s and useful methods
+1. `dict`s and useful methods
+1. loops - `for` and `while`
+1. functions - `def`
+ - arguments
+ - `return`s (and not returns)
+ - `pass`
+
+---
+
+# Before everything else
+
+## Where do I get info?
+
+--
+
+1. [Stack Overflow](https://stackoverflow.com/)
+--
+
+1. Google (which will point you to Stack Overflow)
+--
+
+1. [devdocs.io](https://devdocs.io/)
+  - Save it to a bookmark/favorite, and configure your most used languages/packages
+--
+
+1. ChatGPT
+--
+
+1. [Gemini](https://gemini.google.com/) (which will probably give you an answer based on Stack Overflow)
+
+---
+class: center, middle, inverse
+
+# Output and Input
+
+---
+
+# Output
+
+Done using `print`
+
+```python
+print("Hello world!")
+
+# output: Hello world!
+```
+--
+
+
+can print multiple types, seperated by commas
+
+```python
+num = 3
+b = True
+print("Hello", "world!", num, b, 3.14)
+
+# output: Hello world! 3 True 3.14
+```
+--
+
+<br/>
+.callout-blue[**Reminder**: Always line-breaks at the end]
+
+---
+
+# Input
+
+Done using the `input`
+
+```python
+name = input("What is your name? ")
+# name is a str
+```
+
+--
+
+**Important**: return value is always a `str` and YOU need to cast it
+
+```python
+age = input("What is your age? ") # age is a str
+age = int(age) # age is now an int
+```
+--
+
+Or in 1 line so that the variable does not change types
+```python
+age = int(input("What is your age? "))
+```
+
+--
+
+<br/>
+.callout-blue[**Reminder**: Always line-breaks at the end]
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({countIncrementalSlides: false, highlightLines: true});
+    </script>
+  </body>
+</html>
