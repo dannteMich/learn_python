@@ -130,6 +130,131 @@ age = int(input("What is your age? "))
 <br/>
 .callout-blue[**Reminder**: Always line-breaks at the end]
 
+---
+
+class: center, middle, inverse
+
+# Conditionals
+
+---
+
+# `if` and his family
+
+Basic structure is simple:
+
+```python
+if <condition-1>:
+    # do something
+elif <condition-2>:
+    # do something else
+elif <condition-3>
+    # do another something else
+else:
+    # All other cases
+```
+
+- Conditions are checked **in order**
+- If you use `elif` and `if`, Only one clause will get executed
+
+---
+
+# Lets look at an example
+
+Take a minute to look at this code
+
+```python
+x = int(input("Enter a number: "))
+
+if x > 0:
+    print("Positive")
+elif x % 3 == 0:
+    print("Multiple of 3")
+elif x < -20:
+    print("Small negative")
+else:
+    print("Zero")
+```
+
+--
+
+- for `x == 10`:
+--
+ `Positive`
+--
+
+- for `x == 9`:
+--
+ `Positive`
+--
+
+- for `x == -6`:
+--
+ `Multiple of 3`
+--
+
+- for `x == 0`:
+--
+ `multiple of 3`
+--
+
+- for `x == -21`:
+--
+ `multiple of 3`
+--
+
+- for `x == -7`:
+--
+ `zero`
+--
+
+- for `x == -22`:
+--
+ `Small negative`
+
+---
+
+class: center, middle, inverse
+
+# Strings
+
+---
+
+class: center, middle, inverse
+
+# Lists
+
+---
+
+class: center, middle, inverse
+
+# Dictionary
+
+---
+
+class: inverse
+
+# `str` is a weird collection!
+
+It's a collection of itself
+
+---
+
+class: center, middle, inverse
+
+# Loops
+
+---
+
+class: center, middle, inverse
+
+# Common `for` loops with collections
+
+---
+
+class: center, middle, inverse
+
+# Functions
+
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
