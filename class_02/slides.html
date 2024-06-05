@@ -16,6 +16,8 @@
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .inverse {background-color: black; color: lightgrey }
       .callout-blue {border: 2px solid blue; background-color: #ddddff; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
+      .w-full {max-width: 100%;}
+
     </style>
   </head>
   <body>
@@ -363,7 +365,7 @@ print(l[1]) # 40
       print("1 is in the list")
 
   if 4 not in l:
-    print("4 is not in the list")
+      print("4 is not in the list")
   ```
 --
 
@@ -387,6 +389,54 @@ class: center, middle
 
 ---
 
+# Slicing
+
+- Allows to create a new collection from some part of an existing *sequential* collection
+  - Won't work on 'dict' and 'set'
+- Creates a **new** collection and **does not** change the original
+
+- syntax:
+
+
+<img alt="Slicing explanation" src="./slicing_python.png" class="w-full"/>
+
+
+---
+
+class: center, middle
+
+## A minute to talk about
+# (Im)Mutability
+
+---
+
+# Mutable vs. Immutable
+
+`list`s are mutable - you can change them
+
+```python
+l = [1,2,3]
+l[1] = "two"
+print(l) # 1, "two", 3
+```
+
+--
+
+`str`ings are immutable - you cant change them.
+```python
+s = "hello"
+s[1] = 't' # Throws an error
+```
+--
+You can, however, create a new string
+```python
+s2 = s[:2] + "r" + s[3:] 
+print(s2) # s is not "heklo"
+```
+
+
+---
+
 class: center, middle, inverse
 
 # Dictionary
@@ -401,24 +451,6 @@ class: center middle
 
 It's a collection of itself...
 
----
-
-class: center, middle
-
-## A minute to talk about
-# (Im)Mutability
-
----
-
-
-# Here be Dragons
-
-```python
-l = [1, 2, 3]
-  l2 = l[:]
-  l3 = l # This is a reference. they do not point to the same object
-
-```
 
 
 
@@ -439,6 +471,18 @@ class: center, middle, inverse
 class: center, middle, inverse
 
 # Functions
+
+---
+
+
+# Here be Dragons
+
+```python
+l = [1, 2, 3]
+  l2 = l[:]
+  l3 = l # This is a reference. they do not point to the same object
+
+```
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
