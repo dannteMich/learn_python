@@ -439,8 +439,71 @@ print(s2) # s is not "heklo"
 
 class: center, middle, inverse
 
-# Dictionary
+# Dictionaries
 
+---
+
+# Dictionaries
+
+- An associative collection of key-value pairs
+--
+
+- **Unordered** - no indexing
+  - There is an ordered version in Python 3.7+ (`OrderedDict`)
+--
+
+- keys are uniques, values are not.
+--
+
+- keys and values can be of any type
+  - But it's a bad idea.
+
+
+### Basic usage
+```python
+d = {"name": "Michael", "age": 35, "is_student": True} # creation
+
+print(d["name"]) # Michael # access is with square brackets
+d["children"] = 2 # adding a new key-value pair - also square brackets
+
+len(d) # 4 - number of key-value pairs
+
+
+```
+
+---
+
+# Some useful methods and properties
+
+- Testing a key:
+  ```python
+  if "name" in d: # checking if value in *keys*
+      print("name is in the dictionary") # prints
+  if "Michael" in d:
+      print("Michael is in the dictionary") # does not print
+```
+--
+
+- Testing and getting a value from a key:
+  ```python
+  d.get("age", 0) # 25
+  d.get("married", False) # False - gets the default value
+  ```
+--
+
+- getters:
+  ```python
+  d.keys() # dict_keys(['name', 'age', 'is_student', 'children'])
+  d.values() # dict_values(['Michael', 35, True, 2])
+  d.items() # dict_items([('name', 'Michael'), ('age', 35), ...])
+  
+  ```
+--
+
+- Deletion:
+  ```python
+  del d["name"] # deletes the key-value pair
+  ```
 ---
 
 class: center middle
