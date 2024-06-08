@@ -1,0 +1,12 @@
+[
+  { "word": "sunset", "description": "Evening sky spectacle" },
+  { "word": "rainbow", "description": "Colorful arc in the sky" },
+  { "word": "courage", "description": "Bravery or resolve" },
+  { "word": "mystery", "description": "Unexplained or puzzling thing" },
+  { "word": "bicycle", "description": "Two-wheeled pedal vehicle" },
+  { "word": "liberty", "description": "Freedom to act" },
+  { "word": "delicious", "description": "Very tasty" },
+  { "word": "melody", "description": "Sequence of musical notes" },
+  { "word": "history", "description": "Study of the past" },
+  { "word": "planet", "description": "Celestial body orbiting a star" }
+]

@@ -1,3 +1,8 @@
+import pathlib
+import random
+import json
+
+
 def print_partial_word(word: str, guessed_letters: list[str]):
     res = ""
     for letter in word:
@@ -31,12 +36,15 @@ def is_word_fully_guessed(word: str, guessed_letters: list[str]):
 
 
 def guess_the_word_and_update_score(
-    word_to_guess: str, current_player_index: int, players_score: list[int]
+    target: dict, current_player_index: int, players_score: list[int]
 ):
     """Returns the next player index to play"""
-
+    word_to_guess = target['word']
     word_to_guess = word_to_guess.upper()
+    description = target['description']
     guessed_letters = []
+
+    print(f"Clue: {description}")
 
     while not is_word_fully_guessed(word_to_guess, guessed_letters):
         print(f"Player{current_player_index + 1}, it's your turn:")
@@ -50,20 +58,29 @@ def guess_the_word_and_update_score(
         if current_player_index == len(players_score):
             current_player_index = 0
 
-    print("Congratulations!!! You guessed the word")
+    print(f"Congratulations!!! You guessed the word {word_to_guess}\n\n")
     return current_player_index
+
+def get_words_and_descriptions():
+    current_file_path = pathlib.Path(__file__)
+    words_path = current_file_path.parent / "words.json"
+    words_for_game = json.loads(words_path.read_text())
+    random.shuffle(words_for_game)
+
+    return words_for_game
 
 
 if __name__ == "__main__":
     print("Starting Game\n")
 
+    words_for_game = get_words_and_descriptions()
+
     players_score = [0, 0]
     current_player_index = 0
 
-    words = ["system"]
-    for word in words:
+    for guess_dict in words_for_game:
         current_player_index = guess_the_word_and_update_score(
-            word, current_player_index, players_score
+            guess_dict, current_player_index, players_score
         )
 
     print("\nGame is over. Score:")
