@@ -382,6 +382,46 @@ print(l[1]) # 40
   ```
 
 ---
+
+class: center, middle, inverse
+
+# Tuples
+
+---
+
+# Tuples
+
+An ordered, **immutable** collection of items
+
+- So it's like lists, but you can't change it
+  ```python
+  t = ("Michael", 35, True) # creation with parentheses
+  print(t[1]) # 35          # access with square brackets
+  
+  t[2] = False              # Error - can't change
+  ```
+--
+
+- Can **destructure** - assign to multiple variables
+  ```python
+  name, age, is_student = t
+  print(name) # Michael
+  print(age) # 35
+  
+  ```
+
+--
+
+- Can hold many types of items
+  - And (unlike lists) this is usually the case
+  - Usually what we get is a list of tuples...
+
+
+--
+
+- Useful functions that return tuples: `dict.items()`, `enumerate`, `zip`
+
+---
 class: center, middle
 
 ## A minute to talk about
@@ -525,6 +565,57 @@ class: center, middle, inverse
 
 ---
 
+# `while` loops
+
+Most basic loop that every language has.
+```python
+while condition:
+      do_something()
+
+do_after_loop()
+```
+
+--
+
+
+You can do everything with them, but they are most useful when you don't know how long (how many iterations) something is going to take
+
+--
+
+common uses (NOT an exhaustive list):
+- Input from user ('till he gets it right')
+- Endless loop with `white True:`
+  - exiting with `break`
+
+
+---
+
+# `break` and `continue`
+
+2 extra ways to control the flow with a loops
+
+- `break` - stops the loop - the next line is the line after the loops
+- `continues` - stops this iteration of the loop and goes to the next one.
+
+--
+
+Important notes:
+- work for both `while` and `for` loops
+- work only on containing loop - if loops are containing other loops, the outer ones are not affected
+
+--
+
+```python
+while True:
+  input = input("what is your name?") // TODO: finish this
+```
+
+---
+
+# `for` loops
+
+---
+
 class: center, middle, inverse
 
 # Common `for` loops with collections
@@ -538,14 +629,7 @@ class: center, middle, inverse
 ---
 
 
-# Here be Dragons
 
-```python
-l = [1, 2, 3]
-  l2 = l[:]
-  l3 = l # This is a reference. they do not point to the same object
-
-```
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
