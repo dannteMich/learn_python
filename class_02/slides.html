@@ -30,7 +30,14 @@ class: center, middle, inverse
 
 ---
 
+class: center
 
+<img src="./guido.jpg" class="w-full"/>
+--
+
+[Guido. my love](https://en.wikipedia.org/wiki/Guido_van_Rossum). second [best](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) dutch computer scientist
+
+---
 
 # Agenda
 
@@ -703,6 +710,55 @@ class: center, middle, inverse
 
 ---
 
+# Functions Basics
+
+- The basic building blocks of most programming languages.
+
+--
+
+<img src="./function.png" alt="function syntax" class="w-full"/>
+
+---
+# Things to think about
+
+- NAME!!!!
+- Interface: **arguments** (types and names) and **return type** (if any)
+- Exceptions (errors) thrown
+- state changing (not only for class\object methods)
+
+
+--
+
+- return will break the function in any point
+
+--
+
+# Please remember:
+
+- type hints
+- docstrings
+
+---
+
+# Good practices
+
+--
+
+- Names! Names! and some more NAMES!
+  - for both functions and arguments
+
+
+- Function should either return a value (pure functions) or change state. Avoid doing both.
+
+- type constraints (and actually all constraints) are your friends. Embrace them.
+
+- In python all function return a value. `None` by default.
+
+
+- If you are copy-pasting more that one line, maybe it should be in a function.
+
+---
+
 class: center, middle
 
 # But that is not all! Oh no. That's not all
@@ -712,9 +768,18 @@ class: center, middle
 ---
 # Some advanced topics regarding functions:
 
+We are not going to talk about these, but you are welcome to read about them
+
 - `kwargs` (key-word arguments)
 - `lambda` functions
 - closures (common in js, still useful in python)
+- inside classes it gets even more complicate
+  - static functions
+  - class functions
+  - properties (setters and getters)
+- decorators (functions for functions)
+  - possible without decorators, but not common in python
+
 
 ---
 
