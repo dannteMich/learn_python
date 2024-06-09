@@ -601,14 +601,20 @@ common uses (NOT an exhaustive list):
 
 Important notes:
 - work for both `while` and `for` loops
-- work only on containing loop - if loops are containing other loops, the outer ones are not affected
-
 --
 
-```python
-while True:
-  input = input("what is your name?") // TODO: finish this
-```
+- work only on containing loop - if loops are containing other loops, the outer ones are not affected
+
+  ```python
+  res = []
+  while len(res) < 3:
+        while True:
+          input = input("what is your name?") // TODO: finish this
+          if input[0].islower():
+            print("Name should start with uppercase letter")
+          else
+  *         break    
+  ```
 
 ---
 
