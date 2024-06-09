@@ -17,6 +17,7 @@
       .inverse {background-color: black; color: lightgrey }
       .callout-blue {border: 2px solid blue; background-color: #ddddff; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
       .w-full {max-width: 100%;}
+      .h-full {max-height: 100%;}
 
     </style>
   </head>
@@ -620,11 +621,79 @@ Important notes:
 
 # `for` loops
 
+Loops that iterate over elements in a collection (an iterable collection) - providing access to one element at a time.
+
+```python
+l = [1,2,3,4]         # will also work with a tuple
+sum = 0
+
+for element in l:
+  print(element)
+  sum = sum + element # sum += element
+
+```
+
+--
+
+- can be used to destructure inner collections
+
+  ```python
+  l = [("Michael", 35), ("Miri", 32)]
+
+  for name, age in l:
+      print(f"{name} is {age} years old")
+  ```
+
+--
+
+- Very useful.
+- `break` and `continue` also work here
+
 ---
 
 class: center, middle, inverse
 
 # Common `for` loops with collections
+
+
+---
+
+# Common `for` loops with collections
+
+```python
+for i in range(2, 10, 2): # can be wi 1, 2 or 3 arguments
+      print(i)
+```
+
+--
+
+```python
+print("possible names:")
+# enumerate can also be called without the extra argument
+for i, name in enumerate(["Michael", "Daniel", "Jonathan", "William"], 1) : 
+      print(f"{i}. {name}")
+
+```
+- notice the destruction of the tuples
+
+--
+
+### for dictionaries
+```python
+d = {"michael": 35, "daniel: "32", "jonathan": 40}
+
+for k in d:   # equivalent to for k in d.keys()
+  print(d)    # michael, daniel, jonathan
+for val in d.values():
+  print(d)    # 35, 32, 40
+```
+
+--
+
+```python
+for key, value in d.items():
+  print(f"{key} is {value} years old")
+```
 
 ---
 
@@ -634,7 +703,30 @@ class: center, middle, inverse
 
 ---
 
+class: center, middle
 
+# But that is not all! Oh no. That's not all
+
+<img alt="cat in the hat" src="./thats_not_all.jpg" class="w-full h-full"/>
+
+---
+# Some advanced topics regarding functions:
+
+- `kwargs` (key-word arguments)
+- `lambda` functions
+- closures (common in js, still useful in python)
+
+---
+
+class: center, middle, inverse
+
+# Any questions?
+
+---
+
+class: center, middle, inverse
+
+# Get to work!
 
 
     </textarea>
