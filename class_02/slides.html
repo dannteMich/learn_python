@@ -785,6 +785,115 @@ We are not going to talk about these, but you are welcome to read about them
 
 class: center, middle, inverse
 
+# Working with **Files**
+
+---
+
+# Files: some theoretical background
+
+- Files are Operating System (OS) resources: Managed by the OS
+--
+  
+  - You'r access, may prevent other programs from accessing the resource
+--
+
+  - You need to tell the OS when you are done with the resource
+      - Sort of...
+
+--
+
+- You can look at the file as text (string) or as binary (byte stream)
+
+--
+
+
+- There are 3 basic modes to open a file:
+  - read (`r`)
+  - write (`w`) - overwrites the file if exists
+  - append (`a`) - adds to the end of the file, create if does'nt exist
+
+
+--
+
+- and 2 more advanced modes:
+ - read and write (adding `+` to some modes)
+ - exclusive creation (`x`) - will fail if file exists
+
+--
+
+
+- an open file has a cursor (or a position).
+  - operations depend on the position
+  - operation may change the position
+
+---
+
+# Files in python
+
+asking for the resource - creating the file objet with [`open()`](https://devdocs.io/python~3.10/library/functions#open):
+```python
+f = open("path/to/file.txt")  # default is read mode
+f = open("path/to/file.txt", "w")  # write mode
+f = open("path/to/file.txt", "a")  # append mode
+```
+
+--
+
+More advanced stuff:
+
+```python
+f = open("path/to/file.txt", "r+")  # read and write mode
+f = open("path/to/file.txt", "rb")  # exclusive creation mode
+```
+
+--
+
+and now I can work with this:
+
+```python
+content = f.read() # read the whole file
+f.write("new content") # write to the file
+f.seek(0) # go back to the beginning of the file
+```
+
+--
+### There are more functions. Read about them.
+
+---
+
+# Some important remarks
+
+--
+
+### What about closing (releasing) the file?
+- `f.close()`
+- Most of the time, python's garbage collector will do it for you, but don't trust it!
+
+--
+
+### OS resource operations may fail
+
+- `open()` and each other operation (read\write) can throw an error
+- Check for return values
+
+--
+
+### [`pathlib`](https://devdocs.io/python~3.10/library/pathlib#pathlib.Path) to the rescue
+
+```python
+import pathlib
+p = pathlib.Path("path\\to\\file.txt")
+content = p.read_text()
+
+```
+
+
+
+---
+
+
+class: center, middle, inverse
+
 # Any questions?
 
 ---
