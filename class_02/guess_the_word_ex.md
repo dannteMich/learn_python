@@ -43,7 +43,7 @@ All packages used for this exercise are build it, and not all of those have to b
 
 ## The exercise
 
-It is recommended to first Implement the core functionality of the game, and then add the extra features.
+It is recommended to first Implement the core functionality of the game, then do the full requirements and then add the extra features.
 
 ### Core functionality
 The basic idea of the game is to guess a word. If we assume there are 2 players playing then the game would go like this:
