@@ -68,4 +68,4 @@ So, if a question was not answered correctly, the next player gets the same ques
   - The computer should not allow to choose a category and difficulty level that are not available.
 
 
-- Get the question from a web API instead of a file
+- Get the question from a web API instead of a file. You can use [](https://opentdb.com/)

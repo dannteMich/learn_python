@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python OOP</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .inverse {background-color: black; color: lightgrey }
+      .callout-blue {border: 2px solid blue; background-color: #ddddff; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
+      .w-full {max-width: 100%;}
+      .h-full {max-height: 100%;}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Python Classes, <br/>"data struct"s and Exceptions
+
+---
+
+# Intro to OOP - what's the buzz?
+
+There is a lot of history and opinions (go and read Robert C. Martin's "Clean Architecture").
+But we will keep it simplified for our purposes.
+
+--
+
+- So far we used **procedural**- programming: thinking mainly about the procedures - functions - needed for our computation.
+- In Object Oriented Programming we are thinking about the **entities** - objects - in our problem domain.
+
+--
+
+Lets talk about a restaurant kitchen example.
+
+--
+
+- One is not better than the other, they are just different tools that might be more suitable for different problems.
+  - Some say that OOP is easier to understand and maintain.
+
+--
+- Focus on the operator, and not the operations.
+
+---
+
+# What we left out
+
+--
+
+### A lot of important things
+
+- Polymorphism
+
+- Inheritance
+  - interface or implementation
+- `static` and `class` methods.
+
+- encapsulation - which is **really** important 
+
+--
+  - (so we'll mention it in the next slide)
+
+--
+
+- so much more...
+
+---
+
+class: middle, center
+
+### The (soft) definition we are going to use:
+
+
+# An object is a combination of **BEHAVIOR/ACTIONS** and (usually internal, encapsulated) **STATE**
+
+---
+
+# OOP objects vs data structures (records)
+
+
+
+Data structures (`record`s in *C*)  **ARE NOT** OOP objects. They are a collection of related data.
+--
+ 
+- They don't have a behavior
+  - they do not operate (not active), they are operated upon (passive)
+--
+
+- The data is open and public, not encapsulated
+
+--
+
+
+ So: no behavior and no internal state
+
+
+--
+
+### Example: A car vs my ID card
+
+--
+
+- My ID card has data: name, birth date, gender, ALIYAH date
+
+--
+
+- My car has
+  - **Actions** (behavior, operations): accelerate, break, steer, shift-gear
+  - Internal **state** - affected by the operations: is_running, speed, RPM, gear, gas levels, etc...
+
+--
+
+note that for my car - some of that internal state can be accessed and viewed, but I can't control the whole internal state directly
+
+---
+
+class: center
+
+# Something to think about
+
+All cars have pretty much the same *interface* (accelerate, break, steer, etc...) but different car types use different *implementations* (acceleration on an electric car is very different from a V8 engin)
+
+---
+
+class: center, middle
+
+# Done with the theory.
+
+# Questions so far?
+
+---
+
+# Classes: a blue-print for objects
+
+In most normal OOP languages (unlike JS) we use a `class` as the blue-print for the objects. The class defines the object. A class
+
+--
+
+- Describes interfaces (what operations are allowed) - always
+--
+
+- Describes implementations - sometimes
+  - Describes how a new object is created - a constructor - this is a specific implementation
+- Describes internal state - sometimes.
+
+--
+
+Those *sometimes* are out of scope for this lesson, so for our purpose, lets say *always*.
+
+--
+
+Think about a car - a driver does not care about the engine (until it breaks - need to debug it) but the TOYOTA **factory** defines all the inner workings and wiring, and also the process of creating a car.
+
+
+---
+
+# How does it look in python?
+Video game example
+--
+
+```python 
+class MonsterInGame:    # class definition
+
+  # constructor
+*  def __init__(self, img: pathlib.Path, health: int, damage:int, speed: int): 
+    self._img = img           # these are fields/properties/attributes
+    self._health = health
+    self._damage = damage
+    self._speed = speed
+    self._position = (0,0)    # tuple
+
+  def move(self, direction: Tuple[int, int]):  # method
+    self._position = (
+      self._position[0] + direction[0] * self._speed,
+      self._position[1] + direction[1] * self._speed
+    )
+
+  def position(self) -> Tuple[int, int]:  # getter method
+    return self._position
+
+  def take_damage(self, damage: int):  # sorry for cramping the methods
+    self._health -= damage
+  def is_alive(self):
+      return self._health > 0
+  def damage(self):
+      return self._damage
+```
+
+---
+
+# How to use classes?
+
+--
+
+```python
+import random
+
+from characters import Plater, MonsterInGame
+
+player = Player()   # a class with an empty constructor - not args required
+monsters = []
+for i in range(20):
+  m = MonsterInGame(
+    img = random.choice(["goblin.png", "orc.png", "troll.png"]),
+    health = random.randint(40, 100),
+    damage = random.randint(4, 10),
+    speed = random.randint(1, 3)
+  )  
+  monsters.append(m)
+```
+--
+
+Somewhere down the line:
+
+```python
+for monster in monsters:
+  if monster.position == player.position:
+    m.take_damage(player.damage())  
+    player.take_damage(m.damage)
+  
+# List comprehension. You don't have to understand it right now.
+monsters = [m for m in monsters if m.is_alive()]
+
+    
+```
+---
+
+class: center
+
+# Something to think about #2
+
+Did you notice that the player object and the monster objects have some things in common? This makes sense, and also, interesting.
+
+
+---
+
+
+# Some naming conventions
+
+- Classes names use (in most languages) `CamelCase`
+  - In python variable names use `snake_case`
+
+
+--
+
+- Python doesn't have the concept of **private** (that is, internal) methods or fields.
+--
+ But you can use an underscore ( `_` ) prefix to signal other developers and the IDE that this should be treated as a private
+
+--
+
+```python
+class ToyotaCorolla:
+
+  def __init__(self, max_speed):
+      self.max_speed = max_speed        # "public" field
+*     self._gear = "D"  # "private" field - not in completions
+
+  def shift_to_reverse(self, added_speed):
+    if self._check_rear_sensor():
+      self.beep()
+    self._gear = "R"
+
+* def _check_rear_sensor(self) -> bool:   # "private" method - not in completions
+      someone_behind = do_something()
+      return someone_behind
+```
+
+---
+
+class: center, middle
+
+# Any Questions?
+
+
+---
+
+# Lets look at some familiar code
+
+```python
+words_with_s = []
+for i in range(10):
+  s = input("Please enter a word")
+* if s.uppper().count("S") >= 1:
+*   words_with_s.append(s)
+
+while len(words_with_s) > 0:
+* print(words_with_s.pop())
+
+```
+
+
+--
+
+- So now you see, `str` and `list` (and `dict`) are all objects
+  - with *shortcut* constructors.
+
+
+---
+
+# A moment to talk about `set`s
+
+- An **Unordered** collection of **unique**  elements.
+  - Unique meaning no repetition.
+
+
+--
+
+```python
+# DEFINITIONS
+my_set = set([1,2,3,4,5,6,7,8,9,10])
+my_other_set = {1,3,5} # don't confuse with dict definitions
+empty_set = set() # you can't use `{}`
+```
+
+--
+
+  ```python
+  # MUTATIONS
+  my_set.add(5) # does nothing
+  my_set.add(11) # adds 11 to the set
+  my_set.remove(5) # removes 5 from the set
+  my_set(remove(13)) # raises an error
+  ```
+--
+
+
+  ```python
+  # TESTING
+  my_set.has(4) # returns True
+  4 in my_set # returns True
+
+  ```
+--
+
+  ```python
+  # Using FOR
+  for i in my_set:
+      print(i)
+  
+  ```
+
+---
+
+# JSON format and Files
+
+---
+
+# Pydantic - data validation and parsing
+
+---
+
+class: center, middle, inverse
+
+# Any Questions?:
+
+---
+
+class: center, middle, inverse,
+
+# Bonus - Http Requests with `requests`
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({countIncrementalSlides: false, highlightLines: true});
+    </script>
+  </body>
+</html>
