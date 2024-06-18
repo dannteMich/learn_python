@@ -346,18 +346,114 @@ empty_set = set() # you can't use `{}`
 
   ```python
   # Using FOR
-  for i in my_set:
+  for i in my_set: # REMEMBER - the order is not guaranteed.
       print(i)
   
   ```
 
 ---
 
+class: center, middle, inverse
+
+# Any Questions?
+
+---
+
+class: center, middle
+
+# And now
+# for something completely different...
+
+---
 # JSON format and Files
+
+Text based format to transfer data between systems. Based on JavaScript.
+
+- Basic types include strings, numbers, `true`, `false` and `null`
+  - Note the case for the keywords
+
+--
+
+
+- complex types include arrays (lists, in `[ ]`) and objects (dicts, in `{ }`)
+  - the keys in objects are strings
+
+--
+
+
+- recursive - you can have objects inside objects, arrays inside arrays, etc...
+
+--
+
+
+- No comments in json files
+- No trailing commas
+
+
+--
+
+
+```json
+{
+  "name": "John",
+  "age": 30,
+  "cars": ["Ford", "BMW", "Fiat"],
+  "married": true
+}
+```
+--
+
+
+```json
+[
+  {"name": "John", "age": 30},
+  {"name": "Jane", "age": 25}
+]
+```
+---
+
+# Working with JSON files in python
+
+- Builtin `json` module with all you need
+  - `json.load` and `json.dump` for files
+  - `json.loads` and `json.dumps` for strings
+
+
+--
+
+- Arrays are lists, objects are dicts
+
+--
+
+```python
+import json
+
+data = {
+  "name": "John",
+  "age": 30,
+  "cars": ["Ford", "BMW", "Fiat"],
+  "married": True
+}
+
+json_string = json.dumps(data) # you can control indentation, read the docs
+path = pathlib.Path("data.json")
+path.open('w').write(json_string)
+```
+
+--
+
+```python
+content = path.open().read()
+data_out = json.loads(content)
+```
 
 ---
 
 # Pydantic - data validation and parsing
+
+---
+
+# `list` Comprehensions 
 
 ---
 
@@ -369,7 +465,6 @@ class: center, middle, inverse
 
 class: center, middle, inverse,
 
-# Bonus - Http Requests with `requests`
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
