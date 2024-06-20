@@ -27,7 +27,7 @@ The basic idea of the game is to guess a word. If we assume there are 2 players 
     - If he provides an input that is not a single letter, ask for it again until he provides a single letter
     - If he provides a letter that was guessed before for this word, (correctly or not) as for it again until he provides a letter that was not guessed for this word.
     - Once he provided a valid input (a single letter that was not guessed before) if this letter exists in the word, this player gets a point. If not he does not.
-      > Please note that the game is **Case Insensitive** meaning that wheather the user provides a capital or non-capital letter it is considered the same letter.
+      > Please note that the game is **Case Insensitive** meaning that weather the user provides a capital or non-capital letter it is considered the same letter.
     - the turn now goes to the next player, and we go through the whole process again (printing the word as it was guessed so far, asking for a letter, and so on).
   - If the word was fully guessed, it is printed with some clear output that is was fully guessed, the computer chooses a new word from some word bank, prints it with all `*` the the game continues from where it left off.
     - All "guessed letters" are obviously erased, as they are relevant on a per-word basis.
