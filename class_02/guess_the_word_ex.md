@@ -1,47 +1,7 @@
 
-This exercise is done without using classes, at least in the first versions.
 
+# Game - Guess the word
 
-- [Knowledge required](#knowledge-required)
-  - [packages required](#packages-required)
-  - [notes:](#notes)
-- [Things to go over in the lecture](#things-to-go-over-in-the-lecture)
-- [The exercise](#the-exercise)
-  - [Core functionality](#core-functionality)
-  - [Full requirements](#full-requirements)
-  - [Extra features](#extra-features)
-
-
-## Knowledge required
-- `list`s and `dict`ionaries
-- `str`ings
-  - With some basic functions with strings
-- Loops (`while` and `for`) and conditionals (`if`, `elif`, `else`)
-- `input` and `print`
-- Functions
-
-### packages required
-All packages used for this exercise are build it, and not all of those have to be used.
-
-- required packages:
-  - `argparse`
-- optional packages:
-  - `random`
-  - `collections`
-  - `json`
-
-### notes:
-- This exercise can be made a bit simpler by using `OrderedDict` from the `collections` module, but it is not necessary.
-
-
-## Things to go over in the lecture
-- [devdocs.io](https://devdocs.io/)
-- ChatGPT/gemini - at least for generating inputs
-- string functions
-- `while` and `for` loops reminders
-- opening and reading files
-
-## The exercise
 
 It is recommended to first Implement the core functionality of the game, then do the full requirements and then add the extra features.
 
@@ -67,7 +27,7 @@ The basic idea of the game is to guess a word. If we assume there are 2 players 
     - If he provides an input that is not a single letter, ask for it again until he provides a single letter
     - If he provides a letter that was guessed before for this word, (correctly or not) as for it again until he provides a letter that was not guessed for this word.
     - Once he provided a valid input (a single letter that was not guessed before) if this letter exists in the word, this player gets a point. If not he does not.
-    > Please note that the game is **Case Insensitive** meaning that wheather the user provides a capital or non-capital letter it is considered the same letter.
+      > Please note that the game is **Case Insensitive** meaning that wheather the user provides a capital or non-capital letter it is considered the same letter.
     - the turn now goes to the next player, and we go through the whole process again (printing the word as it was guessed so far, asking for a letter, and so on).
   - If the word was fully guessed, it is printed with some clear output that is was fully guessed, the computer chooses a new word from some word bank, prints it with all `*` the the game continues from where it left off.
     - All "guessed letters" are obviously erased, as they are relevant on a per-word basis.
