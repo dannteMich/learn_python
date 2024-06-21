@@ -16,6 +16,7 @@
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
       .inverse {background-color: black; color: lightgrey }
       .callout-blue {border: 2px solid blue; background-color: #ddddff; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
+      .callout-red {border: 2px solid red; background-color: #ffdddd; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
       .w-full {max-width: 100%;}
       .h-full {max-height: 100%;}
 
@@ -42,7 +43,7 @@ But we will keep it simplified for our purposes.
 
 --
 
-Lets talk about a restaurant kitchen example.
+Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
 
 --
 
@@ -77,6 +78,47 @@ Lets talk about a restaurant kitchen example.
 
 ---
 
+# Encapsulation: Hiding implementation
+
+--
+
+-  When My kid tells me "Please call Mommy" she does not care how I do it.
+
+---
+
+# Encapsulation: Hiding internal state
+
+--
+
+
+- A newborn baby has (roughly) 5 internal state:
+  - OK
+  - hungry
+  - tired
+  - uncomfortable
+  - in pain
+
+- It has an interface of 3 **mutation** methods:
+  - feed(food)
+  - put to sleep()
+  - change diaper(new_diaper)
+  - take to doctor(doctor)
+
+--
+
+- But an interface of only 2 *getter* methods:
+  - is_crying()
+  - is_sleeping()
+
+--
+
+BAD INTERFACE DESIGN. 
+--
+understand the internal state I need to try and use the mutations and see the reaction in the getters.
+
+
+---
+
 class: middle, center
 
 ### The (soft) definition we are going to use:
@@ -85,6 +127,8 @@ class: middle, center
 # An object is 
 # a combination of **BEHAVIOR/ACTIONS** 
 # and (usually internal, encapsulated) **STATE**
+
+
 
 ---
 
@@ -250,8 +294,8 @@ Did you notice that the player object and the monster objects have some things i
 
 # Some naming conventions
 
-- Classes names use (in most languages) `CamelCase`
-  - In python variable names use `snake_case`
+- **Classes names** use (in most languages) `CamelCase`
+  - In python **variable names** use `snake_case`
 
 
 --
@@ -553,16 +597,52 @@ data = {
 
 json_string = json.dumps(data) # you can control indentation, read the docs
 path = pathlib.Path("data.json")
-path.open('w').write(json_string)
+path.open('w').write(json_string) # better to do path.write_text(json_string)
 ```
 
 --
 
 ```python
-content = path.open().read()
+content = path.open().read() # better to do path.read_text()
 data_out = json.loads(content)
 ```
 
+---
+
+class: center, middle, inverse
+
+## Our first 3rd party package:
+# Pydantic
+
+---
+
+# Quick overview of python 3rd party packages
+
+- Python has a huge and active communities of builders
+  - Maybe you'll join them some day.
+--
+
+- They build packages you can use
+  - Most written in python, some only wrapped in python
+--
+
+- Packages are uploaded to the *public PYthon Package Index*: [pypi](https://pypi.org/)
+--
+
+- You have a local tool to install and manage packages on your computer: `pip`
+
+  ```bash
+  # in your cmd/bash
+  pip install <name_of_package>
+  ```
+  And now you can `import` you'r package
+--
+
+  - Many options, including limiting versions
+
+--
+
+- .callout-red[A moment to talk about dependency collision, and **venv**s]
 ---
 
 # Pydantic - data validation and parsing
