@@ -10,6 +10,9 @@ class Question:
         for i, answer in enumerate(self._answers, 1):
             print(f"\t{i}. {answer}")
 
+    def __repr__(self):
+        return f"Questions {self._question}"
+    
     def ask_a_question(self):
 
         self.print_question()

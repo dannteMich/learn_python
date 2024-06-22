@@ -1,0 +1,103 @@
+[
+    {
+      "question": "What is the largest planet in our solar system?",
+      "answers": [
+        "Earth",
+        "Jupiter",
+        "Mars",
+        "Venus"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "What is the capital of France?",
+      "answers": [
+        "London",
+        "Berlin",
+        "Paris",
+        "Rome"
+      ],
+      "correct_answer_index": 2
+    },
+    {
+      "question": "The Great Wall of China is made out of what material?",
+      "answers": [
+        "Wood",
+        "Brick and stone",
+        "Steel",
+        "Concrete"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "How many hearts does an octopus have?",
+      "answers": [
+        "One",
+        "Two",
+        "Three",
+        "Multiple"
+      ],
+      "correct_answer_index": 3
+    },
+    {
+      "question": "What is the name of the search engine developed by Google?",
+      "answers": [
+        "Chrome",
+        "Google Search",
+        "Bing",
+        "DuckDuckGo"
+      ],
+      "correct_answer_index": 1
+    },
+    {
+      "question": "What is the tallest mountain in the world?",
+      "answers": [
+        "Mount Everest",
+        "K2",
+        "Kangchenjunga",
+        "Lhotse"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "What year did World War II begin?",
+      "answers": [
+        "1939",
+        "1941",
+        "1943",
+        "1945"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "What is the chemical symbol for water?",
+      "answers": [
+        "H2O",
+        "NaCl",
+        "CO2",
+        "NH3"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "What is the name of the fictional detective created by Arthur Conan Doyle?",
+      "answers": [
+        "Sherlock Holmes",
+        "Hercule Poirot",
+        "Miss Marple",
+        "Adrian Monk"
+      ],
+      "correct_answer_index": 0
+    },
+    {
+      "question": "What is the name of the largest ocean on Earth?",
+      "answers": [
+        "Pacific Ocean",
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean"
+      ],
+      "correct_answer_index": 0
+    }
+  ]
+  
