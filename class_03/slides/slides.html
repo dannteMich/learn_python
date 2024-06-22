@@ -645,7 +645,120 @@ class: center, middle, inverse
 - .callout-red[A moment to talk about dependency collision, and **venv**s]
 ---
 
-# Pydantic - data validation and parsing
+# [Pydantic](https://docs.pydantic.dev/latest/) - data validation and parsing
+
+- Defines itself as a *"Data Validation library"*
+  - Which means - checks that data objects (structs, records) are of the right structures and types
+  - Save you writing the validation code
+
+--
+
+
+- Really nice for parsing and dumping to JSON
+
+--
+
+- Declarative and nice to read
+
+--
+
+- Used in some other popular libraries (like [`FastAPI`](https://fastapi.tiangolo.com/))
+
+--
+
+- Python has a builtin "equivalent" - [`dataclasses`](https://devdocs.io/python~3.10/library/dataclasses#dataclasses.dataclass) but we will not be using ig for various reasons
+
+--
+
+- Installing with pip:
+
+  ```bash
+  pip install pydantic
+  # alternative: python -m pip install pydantic
+  # should be version 2.*
+  ```
+
+---
+
+# Defining pydantic model
+
+defining a *"model"*
+
+```python
+from pydantic import BaseModel
+
+*class Person(BaseModel):
+  name: str
+  age: int
+  is_married: bool = False
+  cars: List[str] = []
+```
+--
+- Notice the Inheritance
+    - We didn't talk about it. So lets just take it as is.
+--
+- Each field has a type hint
+    - And for pydantic it's not a "hint" - it's a requirement
+--
+- Fields are under the class definition, not under any function
+    - Class attributes/fields
+--
+- Fields can have default values
+
+--
+
+These are the basics. There are more options and features like extra validations (range for a number, RE for a string, etc...)
+
+---
+
+# Using the model
+
+- Using the constructor (like and any class)
+  ```python
+  p = Person(name="John", age=30, cars=["Ford", "BMW"])
+  # is_married will be default value
+  ```
+
+--
+
+- Or straight from a dict
+  ```python
+  data = {"name": "John", "age": 30, "cars": ["Ford", "BMW"]}
+  p = Person.model_validate(data)
+  # from json string with Person.model_validate_json(json_string)
+  ```
+  Notice we are using the **Class** method `model_validate` and not an instance method.
+
+--
+
+- And you can dump (serialize) it easily
+  ```python
+  # to dict
+  d = p.model_dump()
+  # or json string
+  d = p.model_dump_json()
+  ```
+
+---
+
+# OOP Objects or a Dataclass?
+
+--
+
+Unless you do something special, pydantic models are just **dataclasses with validation** (not behaviour, not internal/encapsulated state).
+
+--
+
+But you can:
+
+1. Add behaviour to the model (just as you would with any other class)
+
+
+--
+
+2. Hide the internal state (with the [`Field`](https://docs.pydantic.dev/latest/concepts/fields/) function)
+  - But it's advanced stuff
+
 
 ---
 
