@@ -19,6 +19,7 @@
       .callout-red {border: 2px solid red; background-color: #ffdddd; border-radius: 0.5rem; padding: 0.5rem 1.5rem; ; }
       .w-full {max-width: 100%;}
       .h-full {max-height: 100%;}
+      .w-slide {max-width: 40rem; }
 
     </style>
   </head>
@@ -764,15 +765,46 @@ But you can:
 
 # `list` Comprehensions 
 
+- A piece of syntactic sugar to create a lists from an iterable
+  - Meaning - you don't have to use this.
+
+
+--
+
+- It's **NOT** always the best choice
+  - Sometimes a regular loop is more readable
+  - Sometimes a regular loop is more efficient
+
+
+--
+
+- The basic idea: run a `map` and/or `filter` on an iterable
+  - `map` - transform each element with some function
+  - `filter` - keep only elements that pass some condition
+
+
+--
+
+- examples:
+  - turn all the string in the list to an int
+  - multiple by 2 all the int in the list
+  - get only positive ints
+  - get the first letter if every string that starts with a capital letter
+
+---
+
+# `list` Comprehensions - how it looks
+
+<img src="./comprehension.png" alt="list comprehension structure" class="w-full"/>
+
+
 ---
 
 class: center, middle, inverse
 
-# Any Questions?:
+# Any Questions?
 
----
 
-class: center, middle, inverse,
 
 
     </textarea>
