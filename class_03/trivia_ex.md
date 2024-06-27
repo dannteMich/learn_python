@@ -14,9 +14,9 @@ Most of the packages used for this exercise are build it, and not all of those h
   - `argparse`
   - `random`
   - `json`
-  - one to be installed - `pydantic`
 - extra packages:
   - `requests`
+  - `pydantic`
 
 ## Things to go over in the lecture
 - classes and objects
@@ -24,8 +24,9 @@ Most of the packages used for this exercise are build it, and not all of those h
 - exceptions
 - sets
 - JSON files
-- `pydantic` for data validation and parsing
-- maybe some `requests` for the extra features and some general Web API knowledge
+- extra
+  - `pydantic` for data validation and parsing - extra
+  - maybe some `requests` for the extra features and some general Web API knowledge
 
 ## The exercise
 
