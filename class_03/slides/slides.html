@@ -28,7 +28,7 @@
 
 class: center, middle, inverse
 
-# Python Classes, <br/>"data struct"s and Exceptions
+# Python Classes, <br/>"data struct"s and Files
 
 ---
 
@@ -44,7 +44,7 @@ But we will keep it simplified for our purposes.
 
 --
 
-Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
+Lets talk about a the recipe example. **Actions** vs **Ingredients**
 
 --
 
@@ -71,7 +71,7 @@ Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
 - encapsulation - which is **really** important 
 
 --
-  - (so we'll mention it in the next slide)
+  - (so we are going to talk about it)
 
 --
 
@@ -84,6 +84,18 @@ Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
 --
 
 -  When My kid tells me "Please call Mommy" she does not care how I do it.
+
+--
+
+
+- The car example:
+  - A clear **interface** that you learn when you get you'r driver's license
+
+  - Only mechanics know the *implementation*
+
+--
+
+    - It's different for different cars.
 
 ---
 
@@ -99,15 +111,13 @@ Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
   - uncomfortable
   - in pain
 
-- It has an interface of 3 **mutation** methods:
+- But it has an interface of 4 **mutation** methods:
   - feed(food)
   - put to sleep()
   - change diaper(new_diaper)
   - take to doctor(doctor)
 
---
-
-- But an interface of only 2 *getter* methods:
+- and only 2 *getter* methods:
   - is_crying()
   - is_sleeping()
 
@@ -115,7 +125,7 @@ Lets talk about a restaurant kitchen example. **Operations** vs. **Operators**
 
 BAD INTERFACE DESIGN. 
 --
-understand the internal state I need to try and use the mutations and see the reaction in the getters.
+To understand the internal state I need to try and use the mutations and see the reaction in the getters.
 
 
 ---
@@ -178,6 +188,12 @@ class: center
 
 All cars have pretty much the same *interface* (accelerate, break, steer, etc...) but different car types use different *implementations* (acceleration on an electric car is very different from a V8 engin)
 
+---
+
+class: center, middle
+
+<img src="blueprint.png" alt="blueprint"/>
+
 
 ---
 
@@ -212,8 +228,8 @@ class: center, middle
 
 ---
 
-# How does it look in python?
-Video game example
+# In Python - video game example
+
 --
 
 ```python 
@@ -238,8 +254,10 @@ class MonsterInGame:    # class definition
 
   def take_damage(self, damage: int):  # sorry for cramping the methods
     self._health -= damage
+
   def is_alive(self):
       return self._health > 0
+
   def damage(self):
       return self._damage
 ```
@@ -354,6 +372,31 @@ while len(words_with_s) > 0:
 - So now you see, `str` and `list` (and `dict`) are all objects
   - with *shortcut* constructors.
 
+
+---
+
+# A function to add (all) to your `class`es
+
+--
+
+
+
+```python 
+class MySpecialClass:
+
+  def __init__(self, some_args.....)
+      pass # something
+
+* def __repr__(self) -> str:
+      return "A string for debugging"
+
+* def __str__(self) -> str:
+    return "A string for debugging 2"
+
+
+```
+
+These are the functions that are called when you use `print()`
 
 ---
 
