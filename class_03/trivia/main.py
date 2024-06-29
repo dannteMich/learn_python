@@ -3,6 +3,7 @@ import json
 import random
 
 from question import Question
+from validated_question import ValidatedQuestion
 
 
 def get_questions_from_file(file_path: str):
@@ -10,19 +11,26 @@ def get_questions_from_file(file_path: str):
     assert questions_file.exists(), "File does not exist"
     questions_list = json.load(questions_file.open())
 
-    game_questions = [
-        Question(q["question"], q["answers"], q["correct_answer_index"])
-        for q in questions_list
-    ]
+    game_questions = [ValidatedQuestion.model_validate(q) for q in questions_list]
 
     return game_questions
+
+
+def game_question_from_validated_question(q: ValidatedQuestion):
+    answers = q.incorrectAnswers + [q.correctAnswer]
+    random.shuffle(answers)
+    correct_index = answers.index(q.correctAnswer)
+
+    return Question(q.question, answers, correct_index)
 
 
 if __name__ == "__main__":
     print("Starting Game")
 
-    game_questions = get_questions_from_file("questions.json")
-    random.shuffle(game_questions)
+    questions_data = get_questions_from_file("extended_questions.json")
+    random.shuffle(questions_data)
+
+    game_questions = [game_question_from_validated_question(q) for q in questions_data]
 
     for q in game_questions[:3]:
         if q.ask_a_question():

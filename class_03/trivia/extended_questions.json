@@ -1,0 +1,76 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "correctAnswer": "Paris",
+    "incorrectAnswers": ["London", "Berlin", "Madrid"],
+    "category": "geography",
+    "difficulty": 1
+  },
+  {
+    "question": "Who is credited with discovering the theory of relativity?",
+    "correctAnswer": "Albert Einstein",
+    "incorrectAnswers": ["Isaac Newton", "Stephen Hawking", "Marie Curie"],
+    "category": "science",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "correctAnswer": "Jupiter",
+    "incorrectAnswers": ["Earth", "Mars", "Venus"],
+    "category": "science",
+    "difficulty": 1
+  },
+  {
+    "question": "In which year did World War II begin?",
+    "correctAnswer": "1939",
+    "incorrectAnswers": ["1914", "1945", "1950"],
+    "category": "history",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the name of the world's longest river?",
+    "correctAnswer": "Nile",
+    "incorrectAnswers": ["Amazon", "Yangtze", "Mississippi"],
+    "category": "geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "correctAnswer": "H2O",
+    "incorrectAnswers": ["NaCl", "CO2", "NH3"],
+    "category": "science",
+    "difficulty": 1
+  },
+  {
+    "question": "Who wrote the famous play 'Hamlet'?",
+    "correctAnswer": "William Shakespeare",
+    "incorrectAnswers": ["Charles Dickens", "Jane Austen", "J.R.R. Tolkien"],
+    "category": "literature",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "incorrectAnswers": ["Sydney", "Melbourne", "Perth"],
+    "category": "geography",
+    "difficulty": 2
+  },
+  {
+    "question": "What is the scientific name for humans?",
+    "correctAnswer": "Homo sapiens",
+    "incorrectAnswers": [
+      "Australopithecus",
+      "Pan troglodytes",
+      "Tyrannosaurus rex"
+    ],
+    "category": "science",
+    "difficulty": "3"
+  },
+  {
+    "question": "What is the tallest mountain in the world?",
+    "correctAnswer": "Mount Everest",
+    "incorrectAnswers": ["K2", "Kangchenjunga", "Lhotse"],
+    "category": "geography",
+    "difficulty": 2
+  }
+]

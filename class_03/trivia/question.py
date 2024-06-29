@@ -1,3 +1,5 @@
+
+
 class Question:
 
     def __init__(self, question: str, answers: list[str], correct_index: int):
@@ -14,7 +16,6 @@ class Question:
         return f"Questions {self._question}"
     
     def ask_a_question(self):
-
         self.print_question()
         answer_index = self._get_answer_index_from_user()
 
