@@ -53,7 +53,7 @@ So, if a question was not answered correctly, the next player gets the same ques
 - The computer selects a question from the file, and the players take turns answering the question as described in the [Core functionality](#core-functionality) section.
   - If the current player answers correctly he gets a point, and the next player gets a new question.
   - if the current player answers incorrectly, the next player gets the same question, with the same answers.
-- When there are not more questions, the game is done, and should print the winner and the full scores.
+- When there are no more questions, the game is finished, and should print the winner and the full scores.
 
 - If I play the game twice with the same file
   - The order of the questions should be different each time
@@ -65,7 +65,7 @@ So, if a question was not answered correctly, the next player gets the same ques
 - allow categories and difficulty levels (and allow to choose)
   - So each question has a category (you decide them) and a difficulty level (easy, medium, hard)
   - On each turn, before a new question is asked, the player can choose a category and a difficulty level from the ones sill available
-  - The game should then select a question from the selected category and difficulty level (if there are more than one question in that category and difficulty level, the program chooses one of then at random.)
+  - The game should then select a question from the selected category and difficulty level (if there are more than one question in that category and difficulty level, the program chooses one of them at random.)
   - The computer should not allow to choose a category and difficulty level that are not available.
 
 

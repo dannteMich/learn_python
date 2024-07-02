@@ -1,20 +1,25 @@
-
-
 class Question:
 
-    def __init__(self, question: str, answers: list[str], correct_index: int):
+    def __init__(
+        self, question: str, answers: list[str], correct_index: int, difficulty: int
+    ):
         self._question = question
         self._answers = answers
         self._correct_index = correct_index
+        self._difficulty = difficulty
+
+    @property
+    def difficulty(self):
+        return self._difficulty
 
     def print_question(self):
-        print(f"Question: {self._question}")
+        print(f"Question with difficulty {self._difficulty}: {self._question}")
         for i, answer in enumerate(self._answers, 1):
             print(f"\t{i}. {answer}")
 
     def __repr__(self):
         return f"Questions {self._question}"
-    
+
     def ask_a_question(self):
         self.print_question()
         answer_index = self._get_answer_index_from_user()
