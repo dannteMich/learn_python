@@ -111,12 +111,14 @@ Lets talk about a the recipe example. **Actions** vs **Ingredients**
   - uncomfortable
   - in pain
 
+
+--
+
 - But it has an interface of 4 **mutation** methods:
   - feed(food)
   - put to sleep()
   - change diaper(new_diaper)
   - take to doctor(doctor)
-
 - and only 2 *getter* methods:
   - is_crying()
   - is_sleeping()
@@ -147,7 +149,7 @@ class: middle, center
 
 
 
-Data structures (`record`s in *C*)  **ARE NOT** OOP objects. They are a collection of related data.
+Data structures (`struct`s in *C*, `record` in *pascal*)  **ARE NOT** OOP objects. They are a collection of related data.
 --
  
 - They don't have a behavior
@@ -271,7 +273,7 @@ class MonsterInGame:    # class definition
 ```python
 import random
 
-from characters import Plater, MonsterInGame
+from characters import Player, MonsterInGame
 
 player = Player()   # a class with an empty constructor - not args required
 monsters = []
@@ -290,9 +292,9 @@ Somewhere down the line:
 
 ```python
 for monster in monsters:
-  if monster.position == player.position:
-    m.take_damage(player.damage())  
-    player.take_damage(m.damage)
+  if monster.position() == player.position():
+    monster.take_damage(player.damage())  
+    player.take_damage(m.damage())
   
 # List comprehension. You don't have to understand it right now.
 monsters = [m for m in monsters if m.is_alive()]
@@ -375,7 +377,7 @@ while len(words_with_s) > 0:
 
 ---
 
-# A function to add (all) to your `class`es
+# A function to add to (all of) your `class`es
 
 --
 
@@ -422,7 +424,7 @@ empty_set = set() # you can't use `{}`
   my_set.add(5) # does nothing
   my_set.add(11) # adds 11 to the set
   my_set.remove(5) # removes 5 from the set
-  my_set(remove(13)) # raises an error
+  my_set.remove(13) # raises an error
   ```
 --
 
@@ -489,9 +491,7 @@ class: center, middle, inverse
 
 --
 
-- and 2 more advanced modes:
- - read and write (adding `+` to some modes)
- - exclusive creation (`x`) - will fail if file exists
+- and 2 more advanced modes (which we won't talk about)
 
 --
 
