@@ -15,7 +15,6 @@ Most of the packages used for this exercise are build it, and not all of those h
   - `random`
   - `json`
 - extra packages:
-  - `requests`
   - `pydantic`
 
 ## Things to go over in the lecture
@@ -26,7 +25,6 @@ Most of the packages used for this exercise are build it, and not all of those h
 - JSON files
 - extra
   - `pydantic` for data validation and parsing - extra
-  - maybe some `requests` for the extra features and some general Web API knowledge
 
 ## The exercise
 
