@@ -67,7 +67,11 @@ In a chart:
 
 ## So, Why do we need clean code?
 
-Because code is written once (max 3 times) and read many times.
+
+- Because code is written once and read many times (1:10 ratio according to uncle Bob).{.fragment}
+- Because code is written over time, and by different people.{.fragment}
+- Because code changes. Constantly. And a lot.{.fragment}
+
 
 ---
 
@@ -104,19 +108,20 @@ The grade for you're code is 60%-80% from the next developer to work on it, the 
 
 ---
 
-## Some comments before we begin:
+## Some comments before we're getting prescriptive:
 
+::: {.incremental}
 - Guidelines over dogma{.fragment}
 - Conventions trump strict adherence{.fragment}
 - Don't forget your tools: the IDE, git, etc..{.fragment}
-- Communication, making your ideas *clear and distinct*, takes effort.{.fragment}
+- Communication, that is making your ideas *clear and distinct*, takes effort.{.fragment}
   - Don't count on the first draft
 
 ---
 
-Most important rule _the boy scout rule_:
+Most important rule is _the boy (and girl) scout rule_:
 
-## Leave the code cleaner than it was when you found it{.fragment}
+### Leave the trail/playground/code cleaner than it was when you found it{.fragment}
 
 
 
@@ -127,14 +132,136 @@ Most important rule _the boy scout rule_:
 
 --
 
+## Basic guidelines
 
-```python [1|2]
 
-def my_func(h, w):
-    return h * w
+* You should spend more time picking good names. They save a lot of time.
+* Don't be afraid of long names. Long names are better than long comments.
+* It's ok to use standards (like `i` a   nd `j` for indexes in loops).
+* These things are debatable - come to the table with some modesty.
 
+---
+
+## Intention revealing names
+
+Names should provide information, and not hide it.
+
+```python
+def is_document_relevant(c):
+  if c > 864000
+    return False
+  return True
 ```
 
+What is `c`? what is `864000`?{.fragment}
+
+--
+
+Lets try this again
+
+```python
+SECONDS_IN_DAY = 86400
+
+def is_document_relevant(seconds_since_creation):
+  if seconds_since_creation > SECONDS_IN_DAY * 10
+    return False
+  return True
+```
+
+---
+
+### Avoid disinformation
+
+The most blatant example is lying. What is the lie here?
+
+```python
+def my_functions(players):
+  active_players_set = []
+  for player in players:
+    if player.is_active():
+      active_players_set.append(player)
+```
+players is a list, not a set{.fragment}
+
+--
+
+#### And then there are all kinds of confusion:
+
+```python
+def check_if_exists(elem, array):
+  # some code here
+```
+There are no arrays in python, only lists.{.fragment}
+
+Another example for confusion: creating a class named `Player` and another `Players` in the same file{.fragment}
+--
+
+Another confusing example
+
+```python
+# A class definition
+class Player:
+  def __init__(self, name: str):
+    self._name = name
+    self._score = 0
+  # more code...
+```
+
+
+
+```python
+# and some time later, in function, I get this
+current_player = ...
+```
+
+What was the type of current_player?
+
+It was `int`. The value was `current_player = 1` {.fragment}
+
+---
+
+### Meaningful Distinctions
+
+```python
+def expand_lists(list1, list2):
+  """Merge one list into the other"""
+  #some code
+```
+Which list is merged into which?
+
+```python{.fragment}
+def expand_lists(source_list, destination_list):
+  #same code
+```
+
+---
+
+### Pick on word per concept
+
+- Are you `get`ting data or `fetch`ing it?{.fragment}
+- Do you have `manager`s or `controller`s?{.fragment}
+
+--
+
+### For classes and methods
+
+- Classes and objects should have **noun** names
+- Methods and functions should have **verb** names
+  - with some standards for classes: `get_` for getters, `is_` for boolean getters, `set_` for setters etc.
+
+--
+
+### Solution Domain Names vs. Problem Domain Names
+
+---
+
+
+
+### Some more Naming guidelines
+
+- Use pronounceable names
+- Use searchable names
+- Don't be cute/use puns
 
 ---
 
@@ -143,6 +270,10 @@ def my_func(h, w):
 ---
 
 # Comments
+
+1. The basic truth: when we update the code, we often forget to update the comments
+1. Dont write comments that explain what the code already explains
+2. comments becomes a noise that I learn to ignore
 
 ---
 
