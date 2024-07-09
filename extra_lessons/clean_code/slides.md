@@ -137,14 +137,23 @@ Most important rule is _the boy (and girl) scout rule_:
 
 * You should spend more time picking good names. They save a lot of time.
 * Don't be afraid of long names. Long names are better than long comments.
-* It's ok to use standards (like `i` a   nd `j` for indexes in loops).
+  * It's ok to use standards (like `i` a   nd `j` for indexes in loops).
 * These things are debatable - come to the table with some modesty.
+
+--
+
+## The basic rules:
+
+* Provide meaningful information:
+  * Intention reveling names
+  * Meaningful distinctions
+* Avoid disinformation
 
 ---
 
-## Intention revealing names
+#### Example 1
 
-Names should provide information, and not hide it.
+What is the problem here:
 
 ```python
 def is_document_relevant(c):
@@ -155,11 +164,8 @@ def is_document_relevant(c):
 
 What is `c`? what is `864000`?{.fragment}
 
---
 
-Lets try this again
-
-```python
+```python{.fragment}
 SECONDS_IN_DAY = 86400
 
 def is_document_relevant(seconds_since_creation):
@@ -170,7 +176,7 @@ def is_document_relevant(seconds_since_creation):
 
 ---
 
-### Avoid disinformation
+#### Example 2
 
 The most blatant example is lying. What is the lie here?
 
@@ -185,7 +191,7 @@ players is a list, not a set{.fragment}
 
 --
 
-#### And then there are all kinds of confusion:
+#### Example 4
 
 ```python
 def check_if_exists(elem, array):
@@ -193,10 +199,34 @@ def check_if_exists(elem, array):
 ```
 There are no arrays in python, only lists.{.fragment}
 
-Another example for confusion: creating a class named `Player` and another `Players` in the same file{.fragment}
+
 --
 
-Another confusing example
+#### Example 5
+
+This is not miss-information, but it will create bugs
+
+```python
+class Player()
+
+  def __init__(self, name: str):
+    self._name = name
+    self._score = 0
+
+  # Some more code
+
+class Players()
+
+  def __init__(self):
+    self._players = []
+
+  # Some more code
+```
+`Player` and `Players` are too similar{.fragment}
+
+--
+
+#### Example 6
 
 ```python
 # A class definition
@@ -207,20 +237,17 @@ class Player:
   # more code...
 ```
 
-
+And down the line, in the same file, I see this:
 
 ```python
-# and some time later, in function, I get this
-current_player = ...
+current_player = 0
 ```
 
-What was the type of current_player?
+I expected the type of `current_player` to be a `Player` {.fragment}
 
-It was `int`. The value was `current_player = 1` {.fragment}
+--
 
----
-
-### Meaningful Distinctions
+#### Example 7
 
 ```python
 def expand_lists(list1, list2):
@@ -234,30 +261,61 @@ def expand_lists(source_list, destination_list):
   #same code
 ```
 
----
-
-### Pick on word per concept
-
-- Are you `get`ting data or `fetch`ing it?{.fragment}
-- Do you have `manager`s or `controller`s?{.fragment}
-
 --
 
-### For classes and methods
+#### Example 8 (real life)
 
-- Classes and objects should have **noun** names
-- Methods and functions should have **verb** names
+```js
+function get_transactions(start_period_millies: number) {...}
+```
+
+Seems like a good name with a good units clarification (millis) but:
+
+1. Not written in the language standard (variables in js are in `camelCase`).{.fragment}
+2. The whole system uses seconds and not milliseconds. It's not a bad name, just a bad decision{.fragment}
+3. When you look at the code, you see it's NOT a period. Its a timestamp. So the name is misleading{.fragment}
+
+---
+
+## More rules:
+
+- Pick on word per concept{.fragment}
+  - Are you `get`ting data or `fetch`ing it?
+  - Do you have `manager`s or `controller`s?
+- Classes and objects should have **noun** names{.fragment}
+- Methods and functions should have **verb** names{.fragment}
   - with some standards for classes: `get_` for getters, `is_` for boolean getters, `set_` for setters etc.
 
 --
 
-### Solution Domain Names vs. Problem Domain Names
+## Solution Domain Names
+
+Use solution domain names - these are "programmatic" or "mathematic" concepts\words, that the client may not understand, but explain a lot to a programmer.
+
+`Factory`, `Set`, `Visitor`, `geometrical_distribution`, algorithms, data structures, etc {.fragment}
+Make sure you use it correctly - not every list is an array {.fragment}
+
+--
+
+## Problem Domain Names
+
+Use concepts and words closer to the problem domain (accounts, addresses, players, etc)
+
+This is useful when communicating with the clients and it's representatives
+
+--
+
+## Solution Domain vs Problem Domain
+
+You will probably use both. You will need to understand when to use which, and when to combine the two.
+
+Different pieces of code are at different "distances" or "depths" from the users, moving farther from problem domain and closer to solution domain.{.fragment}
 
 ---
 
 
 
-### Some more Naming guidelines
+## The rules you don't think about
 
 - Use pronounceable names
 - Use searchable names
@@ -272,8 +330,10 @@ def expand_lists(source_list, destination_list):
 # Comments
 
 1. The basic truth: when we update the code, we often forget to update the comments
-1. Dont write comments that explain what the code already explains
-2. comments becomes a noise that I learn to ignore
+   * the great "continental drifts" of comments away from their original lines
+2. Don't write comments that explain what the code already explains
+3. comments becomes a noise that I learn to ignore
+4. Comments should explain ***why*** and maybe ***how***. never ***what***.
 
 ---
 
