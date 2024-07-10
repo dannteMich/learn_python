@@ -90,7 +90,7 @@ In a chart:
 
 ![](wtf_pm.jpg)
 
-> Write your code as if the man maintaining it is a psychopath with a chainsaw who knows where you live{.fragment}
+> Write your code as if the person maintaining it is a psychopath with a chainsaw who knows where you live{.fragment}
 
 --
 
@@ -128,7 +128,8 @@ The grade for you're code is 60%-80% from the next developer to work on it, the 
 
 Most important rule is _the boy (and girl) scout rule_:
 
-### Leave the trail/playground/code cleaner than it was when you found it{.fragment}
+### Leave the trail/playground/code cleaner
+### than it was when you found it
 
 
 
@@ -139,22 +140,22 @@ Most important rule is _the boy (and girl) scout rule_:
 
 --
 
-## Basic guidelines
+## Things to consider
 
 
 * You should spend more time picking good names. They save a lot of time.
 * Don't be afraid of long names. Long names are better than long comments.
-  * It's ok to use standards (like `i` a   nd `j` for indexes in loops).
+  * It's ok to use standards (like `i` and `j` for indexes in loops).
 * These things are debatable - come to the table with some modesty.
 
 --
 
 ## The basic rules:
 
-* Provide meaningful information:
-  * Intention reveling names
-  * Meaningful distinctions
-* Avoid disinformation
+1. Provide meaningful **information**: {.fragment}
+   * Intention reveling names
+   * Meaningful distinctions
+2.  Avoid **disinformation** {.fragment}
 
 ---
 
@@ -185,10 +186,10 @@ def is_document_relevant(seconds_since_creation):
 
 #### Example 2
 
-The most blatant example is lying. What is the lie here?
+The most blatant example of disinformation is lying. What is the lie here?
 
 ```python
-def my_functions(players):
+def get_active_players(players):
   active_players_set = []
   for player in players:
     if player.is_active():
@@ -198,7 +199,9 @@ players is a list, not a set{.fragment}
 
 --
 
-#### Example 4
+#### Example 3
+
+What's the problem here?
 
 ```python
 def check_if_exists(elem, array):
@@ -209,7 +212,7 @@ There are no arrays in python, only lists.{.fragment}
 
 --
 
-#### Example 5
+#### Example 4
 
 This is not miss-information, but it will create bugs
 
@@ -233,7 +236,7 @@ class Players()
 
 --
 
-#### Example 6
+#### Example 5
 
 ```python
 # A class definition
@@ -254,14 +257,16 @@ I expected the type of `current_player` to be a `Player` {.fragment}
 
 --
 
-#### Example 7
+#### Example 6
+
+What's the problem here?
 
 ```python
 def expand_lists(list1, list2):
   """Merge one list into the other"""
   #some code
 ```
-Which list is merged into which?
+Which list is merged into which?{.fragment}
 
 ```python{.fragment}
 def expand_lists(source_list, destination_list):
@@ -270,7 +275,7 @@ def expand_lists(source_list, destination_list):
 
 --
 
-#### Example 8 (real life)
+#### Example 7 (real life) - JS
 
 ```js
 function get_transactions(start_period_millies: number) {...}
@@ -290,25 +295,30 @@ Seems like a good name with a good units clarification (millis) but:
   - Are you `get`ting data or `fetch`ing it?
   - Do you have `manager`s or `controller`s?
 - Classes and objects should have **noun** names{.fragment}
-- Methods and functions should have **verb** names{.fragment}
-  - with some standards for classes: `get_` for getters, `is_` for boolean getters, `set_` for setters etc.
+- Methods and functions should have **verbs** or **questions** in their names names{.fragment}
+  - with some standards for classes: `get_` for getters, `is_` for boolean queries, `set_` for setters etc.{.fragment}
 
 --
 
 ### Solution Domain Names
 
-Use solution domain names - these are "programmatic" or "mathematic" concepts\words, that the client may not understand, but explain a lot to a programmer.
+Use **solution**-domain names
 
-`Factory`, `Set`, `Visitor`, `geometrical_distribution`, algorithms, data structures, etc {.fragment}
+These are "programmatic" or "mathematic" concepts\words, that the client may not understand, but explain a lot to a programmer.
+
+`Factory`, `Set`, `Visitor`, `geometrical_distribution`, algorithms, data structures (`hashTable`), etc {.fragment}
+
 Make sure you use it correctly - not every list is an array {.fragment}
 
 --
 
 ### Problem Domain Names
 
-Use concepts and words closer to the problem domain (accounts, addresses, players, etc)
+Use **problem**-domain names
 
-This is useful when communicating with the clients and it's representatives
+Concepts and words closer to the problem domain (accounts, addresses, players, etc).
+
+This is useful when communicating with the clients and it's representatives.
 
 --
 
@@ -329,6 +339,11 @@ Different pieces of code are at different "distances" or "depths" from the users
 - Don't be cute/use puns
 
 ---
+
+## Questions so far?
+
+---
+
 
 # Chapter 3: Functions
 
@@ -360,7 +375,7 @@ If not, it's probably not one thing.{.fragment}
 We can _usually_ put a function into one of 2 groups: 
 
 1. Changes some state
-   * of the system, program or just an object
+   * System state, program state or just an object
 2. Does not change the state
    * Answers a question, transforms data, etc.
 
@@ -373,7 +388,7 @@ There are exceptions to these rules - who would you define a `validate_` functio
 
 #### example 1:
 
-What does this function return?
+What _type_ does this function return?
 
 ```python
 def is_valid(guessed_letters, player_idx, players):
@@ -417,7 +432,7 @@ Notice the side effect before `return True`?{.fragment}
 
 ## Function arguments
 
-- I deal number of arguments is 0 (niladic) - this is rare.
+- Ideal number of arguments is 0 (niladic) - this is rare.
 - Then 1 (monadic), then 2 (dyadic), and then 3 (triadic)
 - More than 3 arguments should be avoided
 - Sometimes some arguments **can and should** be bundled together in a class/object/collection{.fragment}
@@ -461,17 +476,18 @@ This is part of the final product, and not in the scope of this discussion.{.fra
 ## The basic truths about comments:
 
 1. If you need a comment, it means the code is not clear enough on it's own.
-2. Comments are the last resort to make you're code clear and readable.
-3. Comments tend to decay (code is updated with the comments) and drift (code is inserted in a way that makes the comments irrelevant).{.fragment}
+2. Comments tend to decay (code is updated with the comments) and drift (code is inserted in a way that makes the comments irrelevant).
 
-Eventually comments becomes noise that we learn to ignore{.fragment}
+Comments are the last resort<br/>to make your code clear and readable.{.fragment}
+
+Eventually comments becomes noise<br/>that we learn to ignore.{.fragment}
 
 --
 
 ### Guidelines for (not) writing comments
 
-1. Don't write comments that explain what the code already explains{.fragment}
-2. Don't write a comment when a better name, or a function would explain it better{.fragment}
+1. Don't write comments that explain what the code already explains.{.fragment}
+2. Don't write a comment when a better name, or a function would explain it better.{.fragment}
 3. Comments should explain ***why*** and maybe ***how***. never ***what***.{.fragment}
 
 --
@@ -481,6 +497,8 @@ Read the book for a full list of **Bad Comments** and **Good Comments**.
 ---
 
 # Chapter 5: Formatting
+
+This is going to be short
 
 --
 
@@ -502,10 +520,8 @@ Read the book for the rest.{.fragment}
 
 --
 
-- All rules have exceptions, and we didn't talk about everything.
+- We didn't talk about everything.
+- All rules have exceptions
 - Your company might have other guidelines.
 - Clean code maximizes readability (and thus maintainability). **NOT performance**.
 
---
-
-Interface inheritance vs implementation inheritance
