@@ -8,14 +8,21 @@ title: "Clean Code"
 
 # Clean Code
 
-> Based mostly on Robert C. Martin, chapters 1-5{.fragment}
+> Based mostly on Robert C. Martin, chapters 1-5
+
+You can see the lectures [here](https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj)
+
+--
+
+<img src="./image.png" height="600px"/>
+
 
 ---
 
 ## Before we start:
 ## What are we writing?
 
-> Based on the Mythical Man-month by A. brooks {.fragment}
+> Based on the<br/>[Mythical Man-Month by A. Brooks](https://en.wikipedia.org/wiki/The_Mythical_Man-Month). {.fragment}
 
 --
 
@@ -475,18 +482,29 @@ Read the book for a full list of **Bad Comments** and **Good Comments**.
 
 # Chapter 5: Formatting
 
+--
+
+
+### The basics: 
+
+- Prevent me from scrolling to read your code
+  - So functions under ~50 lines
+  - line length about 100 characters
+    - Use automatic linters to enforce this.{.fragment}
+- Avoid more than 3 levels of indentation{.fragment}
+
+Read the book for the rest.{.fragment}
+
+
 ---
 
+# Some warnings and things to consider
 
-# Chapter 6: Classes & Objects vs. Data Structures
+--
 
----
-
-# Formatting
-
----
-
-# Additional guidelines
+- All rules have exceptions, and we didn't talk about everything.
+- Your company might have other guidelines.
+- Clean code maximizes readability (and thus maintainability). **NOT performance**.
 
 --
 
