@@ -1,7 +1,7 @@
 ---
 theme : "moon"
 transition: "slide"
-# highlightTheme: "monokai"
+highlightTheme: "monokai"
 # slideNumber: true
 title: "Clean Code"
 ---
@@ -277,9 +277,9 @@ Seems like a good name with a good units clarification (millis) but:
 
 ---
 
-## More rules:
+## More Naming Rules:
 
-- Pick on word per concept{.fragment}
+- Pick one word per concept{.fragment}
   - Are you `get`ting data or `fetch`ing it?
   - Do you have `manager`s or `controller`s?
 - Classes and objects should have **noun** names{.fragment}
@@ -288,7 +288,7 @@ Seems like a good name with a good units clarification (millis) but:
 
 --
 
-## Solution Domain Names
+### Solution Domain Names
 
 Use solution domain names - these are "programmatic" or "mathematic" concepts\words, that the client may not understand, but explain a lot to a programmer.
 
@@ -297,7 +297,7 @@ Make sure you use it correctly - not every list is an array {.fragment}
 
 --
 
-## Problem Domain Names
+### Problem Domain Names
 
 Use concepts and words closer to the problem domain (accounts, addresses, players, etc)
 
@@ -305,7 +305,7 @@ This is useful when communicating with the clients and it's representatives
 
 --
 
-## Solution Domain vs Problem Domain
+### Solution Domain vs Problem Domain
 
 You will probably use both. You will need to understand when to use which, and when to combine the two.
 
@@ -323,21 +323,162 @@ Different pieces of code are at different "distances" or "depths" from the users
 
 ---
 
-# Functions
+# Chapter 3: Functions
+
+--
+
+## The basic rules:
+
+1. Functions should be small{.fragment}
+   * try to fit them in one screen (20-30 lines)
+2. Functions should do **ONE** thing.{.fragment}
+   * Do it well. Do it only!
+   * Avoid side effects{.fragment}
+3. Use descriptive names{.fragment}
+   * Verbs/verb-phrases, with the arguments as nouns
+
+
+--
+
+### What does "do one thing" mean?
+
+Can you explain what it does in ONE short sentence?
+
+If not, it's probably not one thing.{.fragment}
+
+--
+
+### another way to think about side effects:
+
+We can _usually_ put a function into one of 2 groups: 
+
+1. Changes some state
+   * of the system, program or just an object
+2. Does not change the state
+   * Answers a question, transforms data, etc.
+
+It's ok to call non-updating functions from updating functions, but not the other way around.{.fragment}
+
+There are exceptions to these rules - who would you define a `validate_` function?.{.fragment}
+
+
+--
+
+#### example 1:
+
+What does this function return?
+
+```python
+def is_valid(guessed_letters, player_idx, players):
+```
+
+You would expect (at first glance) a boolean, but...{.fragment}
+
+```python{.fragment}
+def is_valid(guessed_letters, player_idx, players):
+    while True:
+        user_guess = input(f"{players[player_idx]}, it's your turn to guess a letter: ").lower()
+        if len(user_guess) > 1:
+            print("Please enter only one letter.")
+        elif not user_guess.isalpha():
+            print("Sorry, only letters are allowed.")
+        elif user_guess in guessed_letters:
+            print("This letter has already been guessed. Try another one.")
+        else:
+            return user_guess
+```
+
+--
+
+#### example 2:
+
+What's the problem here?
+
+```python
+def is_word_discovered(self, word, guessed_letters):
+    for letter in word:
+        if letter not in guessed_letters:
+            return False
+    self.next_word()
+    return True
+```
+
+Notice the side effect before `return True`?{.fragment}
+
 
 ---
 
-# Comments
+## Function arguments
 
-1. The basic truth: when we update the code, we often forget to update the comments
-   * the great "continental drifts" of comments away from their original lines
-2. Don't write comments that explain what the code already explains
-3. comments becomes a noise that I learn to ignore
-4. Comments should explain ***why*** and maybe ***how***. never ***what***.
+- I deal number of arguments is 0 (niladic) - this is rare.
+- Then 1 (monadic), then 2 (dyadic), and then 3 (triadic)
+- More than 3 arguments should be avoided
+- Sometimes some arguments **can and should** be bundled together in a class/object/collection{.fragment}
+- Some languages have named arguments, which can help breaking this rule{.fragment}
+  - For python, you can use `**kwargs` {.fragment}
+  
+> examples at [argparse](https://devdocs.io/python~3.10/library/argparse#argparse.ArgumentParser.add_argument) and [subprocess](https://devdocs.io/python~3.10/library/subprocess#subprocess.check_output) {.fragment}
+
+--
+
+## The hard part - abstraction levels
+
+Example: The "Clean the house" function call
 
 ---
 
-# Classes & Objects vs. Data Structures
+### Some examples for function naming convention
+
+1. `is_` - returns a boolean.{.fragment}
+    * example: `is_prime(n: int) -> bool`
+2. `validate_` - throws exceptions on some condition{.fragment}
+3. `get_` - usually used to extract some value(s) from other value(s){.fragment}
+4. `parse_` usually used to extract some value(s) from string(s){.fragment}
+
+---
+
+# Chapter 4: Comments
+
+--
+
+### What we are **NOT** talking about
+
+Documentation (sometimes in the code) that is written for the users\clients (who might be programmers).
+
+This includes API documentation that is read not only as part of the code, but also in external docs.{.fragment}
+
+This is part of the final product, and not in the scope of this discussion.{.fragment}
+
+---
+
+## The basic truths about comments:
+
+1. If you need a comment, it means the code is not clear enough on it's own.
+2. Comments are the last resort to make you're code clear and readable.
+3. Comments tend to decay (code is updated with the comments) and drift (code is inserted in a way that makes the comments irrelevant).{.fragment}
+
+Eventually comments becomes noise that we learn to ignore{.fragment}
+
+--
+
+### Guidelines for (not) writing comments
+
+1. Don't write comments that explain what the code already explains{.fragment}
+2. Don't write a comment when a better name, or a function would explain it better{.fragment}
+3. Comments should explain ***why*** and maybe ***how***. never ***what***.{.fragment}
+
+--
+
+Read the book for a full list of **Bad Comments** and **Good Comments**.
+
+---
+
+# Chapter 5: Formatting
+
+---
+
+
+# Chapter 6: Classes & Objects vs. Data Structures
 
 ---
 
