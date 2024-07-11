@@ -4,8 +4,6 @@ in addition the the knowledge of previous classes, the following is required:
 - `class`es
 - JSON files and parsing
 - some understanding of `pydantic` for the extra features
-- some understanding of exceptions
-- maybe requests for the extra features
 
 ### packages required
 Most of the packages used for this exercise are build it, and not all of those have to be used.
