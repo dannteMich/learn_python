@@ -1,5 +1,6 @@
 ---
 theme : "moon"
+pdfSeparateFragments: false
 transition: "slide"
 highlightTheme: "monokai"
 # slideNumber: true
