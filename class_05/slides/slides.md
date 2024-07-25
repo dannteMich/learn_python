@@ -78,7 +78,7 @@ class GameCharacter(GameObject):
         self._debug_state()
         self._position = (x,y)
 
-class Player(GameCharacters):
+class Player(GameCharacter):
     # Lets ignore the constructor for a moment 
     # and assume some `health` field
 
@@ -153,13 +153,13 @@ class GameCharacter(GameObject):
         self._debug_state()
         self._position = (x,y)
 
-class Player(GameCharacters):
+class Player(GameCharacter):
     def __init__(
       self, 
       initial_pos: tuple[int, int] = (0,0), 
       health=10
     ):
-        GameCharacters.__init__(self, initial_pos)
+        GameCharacter.__init__(self, initial_pos)
         self._health = health
 
     def is_alive(self):
@@ -171,7 +171,7 @@ class Player(GameCharacters):
 ### Some syntactic sugar for this
 
 ```python
-class Player(GameCharacters):
+class Player(GameCharacter):
     def __init__(
       self, 
       initial_pos: tuple[int, int] = (0,0), 
@@ -212,7 +212,7 @@ class Mammal():
 
     def go_to(self, new_pos: Tuple[int,int]):
         self._position = new_pos
-        print(f"{self._name} is walking to ${new_pos}")
+        print(f"{self._name} is walking to {new_pos}")
 
 class Elephant(Mammal):
     pass
@@ -220,7 +220,7 @@ class Elephant(Mammal):
 class Bat(Mammal):
   def go_to(self, new_pos: Tuple[int,int]):
     self._position = new_pos
-    print(f"{self._name} is flying to ${new_pos}")
+    print(f"{self._name} is flying to {new_pos}")
 ```
 
 --
