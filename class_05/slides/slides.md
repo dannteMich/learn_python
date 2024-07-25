@@ -25,6 +25,7 @@ title: "OOp 2"
 
 ### If we have time
 
+- `@property`
 - Exceptions
 
 
@@ -33,7 +34,9 @@ title: "OOp 2"
 
 ### The problem with this lecture
 
-Complicated subject, with many concepts, details, and common practices taken from various languages. But:
+Complicated subject, with many concepts, details, and common practices taken from various languages. 
+
+But:
 
 1. Python's OOP is weird and not intuitive.
 2. Some of the common practices are really bad, and you should not do it.
@@ -136,7 +139,7 @@ How should we use the `__init__` function?
 Remember - base objet inside the derived object
 
 
-We need to construct the inner object, in the instructor if the derived object.
+We need to construct the inner object, in the constructor of the derived object.
 
 ```python{.fragment}
 class GameCharacter(GameObject):
@@ -253,7 +256,7 @@ Well, that was simple{.fragment}
 
 --
 
-Implementation inheritance is so bad<br>that 2 of the major modern programming languages (*go* and *rust*) **do not support it**.
+Implementation inheritance is so bad<br>that [2 of the major modern programming languages](https://www.statista.com/statistics/793628/worldwide-developer-survey-most-used-languages/) (*go* and *rust*) **do not support it**.
 
 --
 
@@ -741,3 +744,6 @@ def get_file_content(file_path: str)
 - You can write your own exception class {.fragment}
    - Don't forget to inherit from `Exception`
 
+---
+
+questions?
