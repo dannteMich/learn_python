@@ -1,12 +1,25 @@
+from utils import get_int_input_in_range
+
+
 class Question:
 
     def __init__(
-        self, question: str, answers: list[str], correct_index: int, difficulty: int
+        self,
+        question: str,
+        answers: list[str],
+        correct_index: int,
+        difficulty: int,
+        category: str,
     ):
         self._question = question
         self._answers = answers
         self._correct_index = correct_index
         self._difficulty = difficulty
+        self._category = category
+
+    @property
+    def category(self):
+        return self._category
 
     @property
     def difficulty(self):
@@ -20,7 +33,8 @@ class Question:
     def __repr__(self):
         return f"Questions {self._question}"
 
-    def ask_a_question(self):
+    def ask_a_question(self) -> bool:
+        """Asks the user the question. Return True if he answers correctly"""
         self.print_question()
         answer_index = self._get_answer_index_from_user()
 
@@ -30,16 +44,8 @@ class Question:
 
     def _get_answer_index_from_user(self):
         answers_num = len(self._answers)
+        user_choice = get_int_input_in_range(
+            1, answers_num, "Please select an answer (number): "
+        )
 
-        while True:
-            raw_input = input("Please select an answer (number): ")
-            if not raw_input.isdigit():
-                print("Bad input. Please provide a positive number")
-                continue
-            input_number = int(raw_input)
-
-            if input_number < 1 or input_number > answers_num:
-                print(f"Bad input. Please provide numbers in range [1, {answers_num}]")
-                continue
-
-            return input_number - 1
+        return user_choice - 1
