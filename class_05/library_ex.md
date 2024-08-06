@@ -19,6 +19,28 @@ This exercise is a bit complicated, but it's important you understand the requir
 
 ### Required Actions and and Queries
 
+- Types of items to rent
+  - Book
+    - Title
+    - Author
+    - ISBN
+    - Pages
+    - Back Text
+  - Magazine
+    - Name
+    - Publishing Date
+    - List of articles. For each article:
+      - Title
+      - Author
+  - DVD
+    - Title
+    - Director
+    - Actors
+    - Duration
+    - Date released
+    - Back text
+  
+
 - Actions
   - Add a book to the library
   - Add a magazine to the library
@@ -30,6 +52,7 @@ This exercise is a bit complicated, but it's important you understand the requir
   - All magazines from a period time
   - All Movies by some Director
   - All Movies with some actor
+  - Search by Title
   - Free text search - all items with a substring in their "info"
   - All borrowed items by a given reader
   - All borrowed books by a given reader

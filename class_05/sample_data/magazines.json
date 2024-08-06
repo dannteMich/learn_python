@@ -1,0 +1,156 @@
+[
+    {
+      "magazineName": "Time Magazine",
+      "publicationDate": "2024-08-01",
+      "articles": [
+        {"title": "AI Revolution", "writer": "John Doe"},
+        {"title": "Climate Change Impact", "writer": "Jane Smith"},
+        {"title": "Space Exploration", "writer": "Michael Johnson"}
+      ]
+    },
+    {
+      "magazineName": "National Geographic",
+      "publicationDate": "2024-08-15",
+      "articles": [
+        {"title": "Wildlife Conservation", "writer": "Emily Brown"},
+        {"title": "Ancient Civilizations", "writer": "David Lee"},
+        {"title": "Ocean Depths", "writer": "Sarah Carter"}
+      ]
+    },
+    {
+      "magazineName": "The Economist",
+      "publicationDate": "2024-08-08",
+      "articles": [
+        {"title": "Global Economy Analysis", "writer": "Mark Wilson"},
+        {"title": "Political Landscape", "writer": "Olivia Taylor"},
+        {"title": "Technological Trends", "writer": "Daniel Harris"}
+      ]
+    },
+    {
+      "magazineName": "Forbes",
+      "publicationDate": "2024-08-10",
+      "articles": [
+        {"title": "Business Leadership", "writer": "Alex Turner"},
+        {"title": "Startup Success Stories", "writer": "Bella White"},
+        {"title": "Financial Markets", "writer": "Charlie Green"}
+      ]
+    },
+    {
+      "magazineName": "Vogue",
+      "publicationDate": "2024-08-15",
+      "articles": [
+        {"title": "Fashion Trends", "writer": "Anna Johnson"},
+        {"title": "Celebrity Style", "writer": "Sophia Brown"},
+        {"title": "Beauty Tips", "writer": "Olivia Carter"}
+      ]
+    },
+    {
+      "magazineName": "Wired",
+      "publicationDate": "2024-08-20",
+      "articles": [
+        {"title": "Tech Innovations", "writer": "Ethan Miller"},
+        {"title": "Cybersecurity Threats", "writer": "Grace Davis"},
+        {"title": "Future of Technology", "writer": "Lucas Anderson"}
+      ]
+    },
+    {
+      "magazineName": "Sports Illustrated",
+      "publicationDate": "2024-08-22",
+      "articles": [
+        {"title": "Basketball Highlights", "writer": "Michael Jordan"},
+        {"title": "Football Analysis", "writer": "Tom Brady"},
+        {"title": "Tennis Champions", "writer": "Serena Williams"}
+      ]
+    },
+    {
+      "magazineName": "Time Magazine",
+      "publicationDate": "2024-08-25",
+      "articles": [
+        {"title": "Health and Wellness", "writer": "Dr. Emily Carter"},
+        {"title": "Education Reform", "writer": "Professor David Lee"},
+        {"title": "Social Justice", "writer": "Activist Sarah Wilson"}
+      ]
+    },
+    {
+      "magazineName": "National Geographic",
+      "publicationDate": "2024-08-28",
+      "articles": [
+        {"title": "Climate Change Solutions", "writer": "Environmentalist Mark Johnson"},
+        {"title": "Ancient Ruins", "writer": "Archaeologist Olivia Taylor"},
+        {"title": "Ocean Conservation", "writer": "Marine Biologist Daniel Harris"}
+      ]
+    },
+    {
+      "magazineName": "The Economist",
+      "publicationDate": "2024-08-31",
+      "articles": [
+        {"title": "Global Trade Analysis", "writer": "Economist Alex Turner"},
+        {"title": "Political Upheaval", "writer": "Journalist Bella White"},
+        {"title": "Economic Forecasts", "writer": "Financial Analyst Charlie Green"}
+      ]
+    },
+    {
+      "magazineName": "Forbes",
+      "publicationDate": "2024-09-02",
+      "articles": [
+        {"title": "Entrepreneurship Tips", "writer": "Business Owner Anna Johnson"},
+        {"title": "Investor Insights", "writer": "Financial Advisor Sophia Brown"},
+        {"title": "Market Trends", "writer": "Economist Olivia Carter"}
+      ]
+    },
+    {
+      "magazineName": "Vogue",
+      "publicationDate": "2024-09-05",
+      "articles": [
+        {"title": "Fashion Week Highlights", "writer": "Fashion Designer Ethan Miller"},
+        {"title": "Sustainable Fashion", "writer": "Environmental Activist Grace Davis"},
+        {"title": "Beauty Products Review", "writer": "Beauty Blogger Lucas Anderson"}
+      ]
+    },
+    {
+      "magazineName": "Wired",
+      "publicationDate": "2024-09-08",
+      "articles": [
+        {"title": "Artificial Intelligence Advancements", "writer": "Tech Expert Michael Jordan"},
+        {"title": "Virtual Reality Experiences", "writer": "Gaming Enthusiast Tom Brady"},
+        {"title": "Robotics Development", "writer": "Engineer Serena Williams"}
+      ]
+    },
+    {
+      "magazineName": "Sports Illustrated",
+      "publicationDate": "2024-09-10",
+      "articles": [
+        {"title": "Olympic Games Highlights", "writer": "Sports Journalist Dr. Emily Carter"},
+        {"title": "Athlete Profiles", "writer": "Sports Analyst Professor David Lee"},
+        {"title": "Sports Injuries Prevention", "writer": "Sports Doctor Sarah Wilson"}
+      ]
+    },
+    {
+      "magazineName": "Time Magazine",
+      "publicationDate": "2024-09-13",
+      "articles": [
+        {"title": "Mental Health Awareness", "writer": "Psychologist Mark Johnson"},
+        {"title": "Global Health Issues", "writer": "Epidemiologist Olivia Taylor"},
+        {"title": "Healthcare Innovations", "writer": "Medical Researcher Daniel Harris"}
+      ]
+    },
+    {
+      "magazineName": "National Geographic",
+      "publicationDate": "2024-09-15",
+      "articles": [
+        {"title": "Wildlife Photography", "writer": "Nature Photographer Alex Turner"},
+        {"title": "Endangered Species", "writer": "Conservationist Bella White"},
+        {"title": "Environmental Impact Studies", "writer": "Ecologist Charlie Green"}
+      ]
+    },
+    {
+      "magazineName": "The Economist",
+      "publicationDate": "2024-09-18",
+      "articles": [
+        {"title": "Economic Inequality", "writer": "Economist Anna Johnson"},
+        {"title": "Political Corruption", "writer": "Journalist Sophia Brown"},
+        {"title": "Global Conflicts", "writer": "Political Analyst Olivia Carter"}
+      ]
+    }
+  ]
+  

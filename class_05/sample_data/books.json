@@ -1,0 +1,100 @@
+[
+    {
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "isbn": "0345391802",
+      "numberOfPages": 215,
+      "description": "The Hitchhiker's Guide to the Galaxy is a comic science fiction series created by Douglas Adams. The series follows the adventures of the hapless Arthur Dent, who is inadvertently swept up in the destruction of the Earth to make way for a new hyperspace bypass."
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "0446310786",
+      "numberOfPages": 281,
+      "description": "The story follows the childhood experiences of Scout Finch and her brother Jem who live in the fictional town of Maycomb, Alabama, in the 1930s. Their father, Atticus Finch, a lawyer, defends a black man falsely accused of raping a white woman."
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn": "0451524934",
+      "numberOfPages": 328,
+      "description": "1984 is a dystopian novel set in Oceania, a totalitarian state where the Party, led by the enigmatic Big Brother, exercises total control over people's lives through surveillance and manipulation."
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn": "0679425570",
+      "numberOfPages": 278,
+      "description": "A complex tale of manners, morals, and marriage in early 19th-century England, centered around the Bennet family and their quest for suitable husbands for their five daughters."
+    },
+    {
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "isbn": "0345339703",
+      "numberOfPages": 463,
+      "description": "The first part of the epic fantasy trilogy, it follows the hobbit Frodo Baggins as he begins his perilous journey to destroy the One Ring, an artifact of immense power that threatens Middle-earth."
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "0743200010",
+      "numberOfPages": 180,
+      "description": "A classic American novel set in the Jazz Age, exploring themes of wealth, love, and the American Dream through the eyes of Nick Carraway, who is drawn into the world of his mysterious neighbor, Jay Gatsby."
+    },
+    {
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "isbn": "059035342X",
+      "numberOfPages": 306,
+      "description": "The first book in the beloved Harry Potter series, introducing the young wizard as he discovers his magical abilities and embarks on a journey to defeat the dark wizard Lord Voldemort."
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "isbn": "0307478684",
+      "numberOfPages": 224,
+      "description": "A coming-of-age novel narrated by Holden Caulfield, a troubled teenager who rebels against the phoniness of the adult world."
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "isbn": "0060926688",
+      "numberOfPages": 197,
+      "description": "A spiritual fable about a young shepherd named Santiago who embarks on a journey to find treasure and fulfill his personal legend."
+    },
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "isbn": "0062316093",
+      "numberOfPages": 464,
+      "description": "A groundbreaking exploration of the history of humankind, from the Stone Age to the present day, examining the factors that led to our species' dominance."
+    },
+    {
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "isbn": "0140444274",
+      "numberOfPages": 176,
+      "description": "An ancient Chinese military treatise that has been widely influential in business and other fields, offering timeless wisdom on strategy and tactics."
+    },
+    {
+      "title": "The Lord of the Rings: The Two Towers",
+      "author": "J.R.R. Tolkien",
+      "isbn": "0345339711",
+      "numberOfPages": 352,
+      "description": "The second part of the Lord of the Rings trilogy, continuing the epic journey of Frodo and the Fellowship as they face new challenges and dangers."
+    },
+    {
+      "title": "The Lord of the Rings: The Return of the King",
+      "author": "J.R.R. Tolkien",
+      "isbn": "034533972X",
+      "numberOfPages": 416,
+      "description": "The climactic conclusion of the Lord of the Rings trilogy, as Frodo and his companions confront the ultimate battle against the forces of evil."
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "0345339682",
+      "numberOfPages": 310
+    }
+]  
+  
