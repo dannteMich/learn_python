@@ -1,9 +1,6 @@
 from pydantic import BaseModel
 
 
-
-
-
 class Book(BaseModel):
     identifier: str
 
@@ -12,7 +9,3 @@ class Book(BaseModel):
     isbn: str
     pages: int
     description: str
-
-
-
-
