@@ -1,0 +1,26 @@
+[
+  {
+    "identifier": "231231231231231231",
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "isbn": "0345391802",
+    "pages": 215,
+    "description": "The Hitchhiker's Guide to the Galaxy is a comic science fiction series created by Douglas Adams. The series follows the adventures of the hapless Arthur Dent, who is inadvertently swept up in the destruction of the Earth to make way for a new hyperspace bypass."
+  },
+  {
+    "identifier": "3b2569ee-1e3d-41dc-a1bf-f6e05d13d218",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "isbn": "0446310786",
+    "pages": 281,
+    "description": "The story follows the childhood experiences of Scout Finch and her brother Jem who live in the fictional town of Maycomb, Alabama, in the 1930s. Their father, Atticus Finch, a lawyer, defends a black man falsely accused of raping a white woman."
+  },
+  {
+    "identifier": "233b08b3-5799-482c-99ed-38e74f7509a1",
+    "title": "The Hobbit",
+    "author": "J R R Tolkein",
+    "isbn": "123456789-0",
+    "pages": 121,
+    "description": "Great adventure"
+  }
+]
