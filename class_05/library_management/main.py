@@ -1,7 +1,7 @@
 from uuid import uuid4
 from pick import pick
 
-from books import Book
+from models.books import Book
 import business_logic as books_actions
 
 ADD = "add"
