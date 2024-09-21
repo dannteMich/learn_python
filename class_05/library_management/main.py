@@ -2,7 +2,11 @@ from uuid import uuid4
 from pick import pick
 
 from models.books import Book
-import business_logic as books_actions
+from models.readers import Reader
+import business_logic as bl
+
+BOOKS = "books"
+READERS = "readers"
 
 ADD = "add"
 QUERY = "query"
@@ -10,6 +14,10 @@ QUERY = "query"
 QUERY_TYPE_TITLE = "title"
 QUERY_TYPE_AUTHOR = "author"
 QUERY_TYPE_TEXT = "free text"
+
+
+def raise_unknown_options():
+    raise RuntimeError("Unknown Option")
 
 
 def is_valid_isbn(isbn: str):
@@ -37,21 +45,60 @@ def add_book_from_user() -> Book:
         description=description,
         pages=pages,
     )
-    books_actions.add_book(new_book)
+    bl.add_book(new_book)
 
 
-if __name__ == "__main__":
+def add_reader_from_user() -> Reader:
+    name = input("Reader's name: ").strip()
+    id = input("Readers id: ").strip()
+    while not (len(id) == 9 and id.isdigit()):
+        id = input("ID should be 9 digits. Readers id: ")
+    bl.add_reader(Reader(name=name, identifier=id))
 
+
+def handle_books():
     choice, _ = pick([ADD, QUERY], "What do you want to do with the books?")
     if choice == ADD:
         add_book_from_user()
     elif choice == QUERY:
-        query_type, _ = pick([QUERY_TYPE_TITLE, QUERY_TYPE_AUTHOR, QUERY_TYPE_TEXT], "What kind of query?")
+        query_type, _ = pick(
+            [QUERY_TYPE_TITLE, QUERY_TYPE_AUTHOR, QUERY_TYPE_TEXT],
+            "What kind of query?",
+        )
         query_string = input("Please type the query string: ").strip()
-        
+
         if query_type == QUERY_TYPE_TITLE:
-            print(books_actions.books_query_by_title(query_string))
+            print(bl.books_query_by_title(query_string))
         elif query_type == QUERY_TYPE_AUTHOR:
-            print(books_actions.books_query_by_author(query_string))
+            print(bl.books_query_by_author(query_string))
         elif query_type == QUERY_TYPE_TEXT:
-            print(books_actions.books_query_by_free_text(query_string))
+            print(bl.books_query_by_free_text(query_string))
+        else:
+            raise_unknown_options()
+    else:
+        raise_unknown_options()
+
+
+def handle_readers():
+    choice, _ = pick([ADD, QUERY], "What do you want to do with the readers?")
+    if choice == ADD:
+        add_reader_from_user()
+    elif choice == QUERY:
+        query_string = input("Please type the part of the reader's name: ").strip()
+        for reader in bl.all_readers():
+            if query_string.lower() in reader.name.lower():
+                print(f"{reader.identifier} - {reader.name}")
+    else:
+        raise_unknown_options()
+
+
+if __name__ == "__main__":
+
+    choice, _ = pick([BOOKS, READERS], "What do you want to handle?")
+
+    if choice == BOOKS:
+        handle_books()
+    elif choice == READERS:
+        handle_readers()
+    else:
+        raise_unknown_options()
